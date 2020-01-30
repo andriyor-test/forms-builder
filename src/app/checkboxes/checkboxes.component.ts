@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./checkboxes.component.css']
 })
 export class CheckboxesComponent implements OnInit {
+  checkboxes = [
+    {title: 'ASdad', checked: true},
+  ];
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  addCheckbox() {
+    this.checkboxes.push(
+      {title: 'ASdad', checked: false},
+    );
   }
 
 }

@@ -1,11 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import { FileUploadModule } from 'ng2-file-upload';
+
+import { AppComponent } from './app.component';
 import { ShortAnswerComponent } from './short-answer/short-answer.component';
 import { ParagraphComponent } from './paragraph/paragraph.component';
 import { DateComponent } from './date/date.component';
@@ -14,6 +22,7 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
 import { CheckboxesComponent } from './checkboxes/checkboxes.component';
 import { MultipleChoicesComponent } from './multiple-choices/multiple-choices.component';
 import {AnswerDirective} from './answer.directive';
+import { DropDownComponent } from './drop-down/drop-down.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +34,8 @@ import {AnswerDirective} from './answer.directive';
     FileUploadComponent,
     CheckboxesComponent,
     MultipleChoicesComponent,
-    AnswerDirective
+    AnswerDirective,
+    DropDownComponent
   ],
   entryComponents: [
     ShortAnswerComponent,
@@ -35,15 +45,25 @@ import {AnswerDirective} from './answer.directive';
     FileUploadComponent,
     CheckboxesComponent,
     MultipleChoicesComponent,
+    DropDownComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatCardModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatCheckboxModule,
+    MatButtonModule,
+    NgxMaterialTimepickerModule,
+    FileUploadModule,
+    MatSlideToggleModule
   ],
-  providers: [],
+  providers: [
+    MatDatepickerModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

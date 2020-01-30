@@ -15,4 +15,7 @@
   </form>
 
   <ng-template appAnswerHost></ng-template>
+  <div *ngIf="selectedAnswerType">
+    <mat-slide-toggle>Required</mat-slide-toggle>
+  </div>
 </mat-card>

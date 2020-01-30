@@ -6,6 +6,7 @@ import {TimeComponent} from './time/time.component';
 import {FileUploadComponent} from './file-upload/file-upload.component';
 import {CheckboxesComponent} from './checkboxes/checkboxes.component';
 import {MultipleChoicesComponent} from './multiple-choices/multiple-choices.component';
+import {DropDownComponent} from './drop-down/drop-down.component';
 
 export const types: AnswerType[] = [
   {title: 'Short answer', component: ShortAnswerComponent },
@@ -15,4 +16,5 @@ export const types: AnswerType[] = [
   {title: 'File upload', component: FileUploadComponent},
   {title: 'Checkboxes', component: CheckboxesComponent},
   {title: 'Multiple choices', component: MultipleChoicesComponent},
+  {title: 'Dropdown', component: DropDownComponent},
 ];

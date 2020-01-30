@@ -1,1 +1,7 @@
-<p>checkboxes works!</p>
+<div class="checkboxes" *ngFor="let checkbox of checkboxes">
+  <mat-checkbox>{{checkbox.title}}</mat-checkbox>
+</div>
+
+<button mat-button (click)="addCheckbox()">
+  Add option
+</button>

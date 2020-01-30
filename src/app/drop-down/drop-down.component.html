@@ -1,0 +1,9 @@
+<div class="dropdown" *ngFor="let input of inputs">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Short answer text" value="">
+  </mat-form-field>
+</div>
+
+<button mat-button (click)="addInput()">
+  Add option
+</button>
