@@ -23,6 +23,7 @@ import { CheckboxesComponent } from './checkboxes/checkboxes.component';
 import { MultipleChoicesComponent } from './multiple-choices/multiple-choices.component';
 import {AnswerDirective} from './answer.directive';
 import { DropDownComponent } from './drop-down/drop-down.component';
+import { FormItemComponent } from './form-item/form-item.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { DropDownComponent } from './drop-down/drop-down.component';
     CheckboxesComponent,
     MultipleChoicesComponent,
     AnswerDirective,
-    DropDownComponent
+    DropDownComponent,
+    FormItemComponent
   ],
   entryComponents: [
     ShortAnswerComponent,
