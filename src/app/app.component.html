@@ -9,12 +9,15 @@
 
 <form [formGroup]="bioSection">
   <ng-container *ngIf="bioSection">
-    <div *ngFor="let item of formConfig">
+    <div *ngFor="let item of formConfig; let i = index">
       <mat-form-field class="example-full-width">
         <input matInput [placeholder]="item.title" value="" formControlName="{{item.control}}">
       </mat-form-field>
       <button mat-button (click)="openDialog(item)">
         Edit
+      </button>
+      <button mat-button (click)="onDeleteItem(i)">
+        Delete
       </button>
     </div>
   </ng-container>

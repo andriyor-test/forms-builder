@@ -62,6 +62,11 @@ export class AppComponent implements OnInit {
     this.bioSection = this.fb.group(this.getControl(this.formConfig));
   }
 
+  onDeleteItem(index) {
+    this.formConfig.splice(index, 1);
+    this.bioSection = this.fb.group(this.getControl(this.formConfig));
+  }
+
   editControl() {
 
   }
