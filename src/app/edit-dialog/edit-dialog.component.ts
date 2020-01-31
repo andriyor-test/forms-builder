@@ -19,6 +19,7 @@ export class EditDialogComponent {
       id: [data.id],
       control: [data.control],
       title: [data.title],
+      type: [data.type],
     });
   }
 
@@ -27,6 +28,8 @@ export class EditDialogComponent {
   }
 
   onApply() {
+    console.log(this.data);
+    this.editForm.controls.type.setValue(this.data.type);
     this.dialogRef.close(this.editForm.value);
   }
 

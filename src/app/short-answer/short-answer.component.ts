@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-short-answer',
@@ -6,31 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./short-answer.component.css']
 })
 export class ShortAnswerComponent implements OnInit {
-  selectedInputType;
-  selectedOption;
+  @Input() control;
+  @Input() group;
 
-  inputTypes = [
-    {
-      title: 'Number',
-      options: [
-        {title: 'Contains'},
-        {title: 'Doesn\'t contain'},
-        {title: 'Email address'},
-        {title: 'URL'},
-      ]
-    },
-    {title: 'Text'},
-    {title: 'Length'},
-    {title: 'Regular expression'},
-  ];
-
-  constructor() { }
-
-  ngOnInit() {
+  constructor() {
   }
 
-  onValueChange() {
-
+  ngOnInit() {
+    console.log(this.control);
   }
 
 }

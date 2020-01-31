@@ -27,6 +27,8 @@ import {AnswerDirective} from './answer.directive';
 import { DropDownComponent } from './drop-down/drop-down.component';
 import { FormItemComponent } from './form-item/form-item.component';
 import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
+import { DynamicControlComponent } from './dynamic-control/dynamic-control.component';
+import { ShortAnswerEditComponent } from './short-answer-edit/short-answer-edit.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
     AnswerDirective,
     DropDownComponent,
     FormItemComponent,
-    EditDialogComponent
+    EditDialogComponent,
+    DynamicControlComponent,
+    ShortAnswerEditComponent,
   ],
   entryComponents: [
     ShortAnswerComponent,
@@ -52,7 +56,8 @@ import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
     CheckboxesComponent,
     MultipleChoicesComponent,
     DropDownComponent,
-    EditDialogComponent
+    EditDialogComponent,
+    ShortAnswerEditComponent
   ],
   imports: [
     BrowserModule,
