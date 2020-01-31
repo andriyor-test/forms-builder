@@ -1,3 +1,23 @@
 <mat-form-field class="example-full-width">
   <input matInput placeholder="Short answer text" value="">
 </mat-form-field>
+
+<div>
+  <mat-form-field class="types">
+    <mat-label>Answer type</mat-label>
+    <mat-select [(value)]="selectedInputType" (valueChange)="onValueChange()">
+      <mat-option *ngFor="let inputType of inputTypes" [value]="inputType" >
+        {{inputType.title}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="types">
+    <mat-label>Answer type</mat-label>
+    <mat-select [(value)]="selectedOption">
+      <mat-option *ngFor="let option of selectedInputType?.options" [value]="option" >
+        {{option.title}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

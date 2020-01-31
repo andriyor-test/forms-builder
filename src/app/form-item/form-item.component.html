@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card class="card">
   <form class="example-form">
     <mat-form-field class="example-full-width">
       <input matInput placeholder="Untitled Question" value="">
@@ -18,4 +18,12 @@
   <div *ngIf="selectedAnswerType">
     <mat-slide-toggle>Required</mat-slide-toggle>
   </div>
+
+  <button mat-button (click)="removeFirmField()">
+    Remove
+  </button>
+
+  <button mat-button (click)="duplicateFirmField()">
+    Duplicate
+  </button>
 </mat-card>

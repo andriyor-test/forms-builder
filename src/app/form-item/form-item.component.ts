@@ -28,4 +28,12 @@ export class FormItemComponent implements OnInit {
     viewContainerRef.clear();
     viewContainerRef.createComponent(componentFactory);
   }
+
+  removeFirmField() {
+
+  }
+
+  duplicateFirmField() {
+
+  }
 }

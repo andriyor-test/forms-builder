@@ -9,6 +9,7 @@ import {MatNativeDateModule} from '@angular/material';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import { FileUploadModule } from 'ng2-file-upload';
@@ -61,7 +62,9 @@ import { FormItemComponent } from './form-item/form-item.component';
     MatButtonModule,
     NgxMaterialTimepickerModule,
     FileUploadModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     MatDatepickerModule

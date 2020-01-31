@@ -1,1 +1,25 @@
-<app-form-item></app-form-item>
+<div *ngFor="let formField of formFields">
+  <app-form-item></app-form-item>
+</div>
+
+<button mat-button (click)="addFormField()">
+  Add option
+</button>
+
+
+<form [formGroup]="bioSection" (ngSubmit)="callingFunction()">
+  <div *ngFor="let item of bioSection.controls | keyvalue">
+    <mat-form-field class="example-full-width">
+      <input matInput [placeholder]="formConfig[item.key].title" value="" formControlName="{{item.key}}">
+    </mat-form-field>
+
+  </div>
+
+  <button type="submit" [disabled]="!bioSection.valid">Submit Application</button>
+  <p>
+    Real-time data: {{ bioSection.value | json }}
+  </p>
+  <p>
+    Your form status is : {{ bioSection.status }}
+  </p>
+</form>
