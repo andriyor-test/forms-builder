@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup} from '@angular/forms';
 import { Validators } from '@angular/forms';
+import {MatDialog} from '@angular/material/dialog';
+import {EditDialogComponent} from './edit-dialog/edit-dialog.component';
 
 
 @Component({
@@ -12,14 +14,28 @@ export class AppComponent implements OnInit {
   formFields = [1];
   bioSection: FormGroup;
   formConfig = [
-    {control: 'firstName', title: 'First Name'},
-    {control: 'lastName', title: 'Last Name'},
-    {control: 'age', title: 'Age'}
+    {id: 1, control: 'firstName', title: 'First Name'},
+    {id: 2, control: 'lastName', title: 'Last Name'},
+    {id: 3, control: 'age', title: 'Age'}
   ];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, public dialog: MatDialog) {
     this.bioSection = this.fb.group(this.getControl(this.formConfig));
-    console.log(this.bioSection);
+  }
+
+  openDialog(item): void {
+    const dialogRef = this.dialog.open(EditDialogComponent, {
+      width: '250px',
+      data: item
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        const index = this.formConfig.findIndex(i => i.id === result.id);
+        this.formConfig[index] = result;
+        this.bioSection = this.fb.group(this.getControl(this.formConfig));
+      }
+    });
   }
 
   ngOnInit() {
@@ -42,8 +58,12 @@ export class AppComponent implements OnInit {
   }
 
   addFormFieldBuilder() {
-    this.formConfig = [...this.formConfig,  {control: 'email', title: 'EMail'}];
+    this.formConfig = [...this.formConfig,  {id: 4, control: 'email', title: 'EMail'}];
     this.bioSection = this.fb.group(this.getControl(this.formConfig));
+  }
+
+  editControl() {
+
   }
 
 }

@@ -9,6 +9,7 @@ import {MatNativeDateModule} from '@angular/material';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatDialogModule} from '@angular/material/dialog';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
@@ -25,6 +26,7 @@ import { MultipleChoicesComponent } from './multiple-choices/multiple-choices.co
 import {AnswerDirective} from './answer.directive';
 import { DropDownComponent } from './drop-down/drop-down.component';
 import { FormItemComponent } from './form-item/form-item.component';
+import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { FormItemComponent } from './form-item/form-item.component';
     MultipleChoicesComponent,
     AnswerDirective,
     DropDownComponent,
-    FormItemComponent
+    FormItemComponent,
+    EditDialogComponent
   ],
   entryComponents: [
     ShortAnswerComponent,
@@ -48,7 +51,8 @@ import { FormItemComponent } from './form-item/form-item.component';
     FileUploadComponent,
     CheckboxesComponent,
     MultipleChoicesComponent,
-    DropDownComponent
+    DropDownComponent,
+    EditDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +68,8 @@ import { FormItemComponent } from './form-item/form-item.component';
     FileUploadModule,
     MatSlideToggleModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
   ],
   providers: [
     MatDatepickerModule
