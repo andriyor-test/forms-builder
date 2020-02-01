@@ -17,7 +17,6 @@ export class DynamicControlComponent implements OnInit {
   constructor(private componentFactoryResolver: ComponentFactoryResolver) { }
 
   ngOnInit() {
-    console.log(this.control);
     const selectedAnswerTypeIndex = this.types.findIndex(t => t.value === this.control.type );
     const answerItem = this.types[selectedAnswerTypeIndex];
 

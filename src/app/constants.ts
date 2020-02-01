@@ -8,6 +8,8 @@ import {CheckboxesComponent} from './checkboxes/checkboxes.component';
 import {MultipleChoicesComponent} from './multiple-choices/multiple-choices.component';
 import {DropDownComponent} from './drop-down/drop-down.component';
 import {ShortAnswerEditComponent} from './short-answer-edit/short-answer-edit.component';
+import {Config} from './models/config.types';
+import {Validators} from '@angular/forms';
 
 export const types: AnswerType[] = [
   {title: 'Short answer', component: ShortAnswerComponent, value: 'short' },
@@ -30,3 +32,43 @@ export const edit: AnswerType[] = [
   {title: 'Multiple choices', component: MultipleChoicesComponent, value: 'multiple-choices'},
   {title: 'Dropdown', component: DropDownComponent, value: 'dropdown'},
 ];
+
+export const config: Config[] = [
+  {
+    id: 1,
+    control: 'firstName',
+    title: 'First Name',
+    type: 'short',
+    validation: {
+      required: true,
+    }
+  },
+  {
+    id: 2,
+    control: 'lastName',
+    title: 'Last Name',
+    type: 'short',
+    validation: {
+      required: true,
+    }
+  },
+  {
+    id: 3,
+    control: 'age',
+    title: 'Age',
+    type: 'short',
+    validation: {
+      min: 18,
+      required: true,
+    }
+  }
+];
+
+export const validators = {
+  min: Validators.min,
+  max: Validators.max,
+  required: Validators.required,
+  email: Validators.email,
+  maxLength: Validators.maxLength,
+  minLength: Validators.minLength
+};

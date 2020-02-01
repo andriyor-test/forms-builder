@@ -13,7 +13,6 @@ export class ShortAnswerComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.control);
   }
 
 }
