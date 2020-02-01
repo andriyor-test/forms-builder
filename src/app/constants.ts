@@ -12,6 +12,7 @@ import {Config} from './models/config.types';
 import {Validators} from '@angular/forms';
 import {ParagraphEditComponent} from './paragraph-edit/paragraph-edit.component';
 import {DateEditComponent} from './date-edit/date-edit.component';
+import {TimeEditComponent} from './time-edit/time-edit.component';
 
 export const types: AnswerType[] = [
   {title: 'Short answer', component: ShortAnswerComponent, value: 'short' },
@@ -28,7 +29,7 @@ export const edit: AnswerType[] = [
   {title: 'Short answer Edit', component: ShortAnswerEditComponent, value: 'short' },
   {title: 'Paragraph', component: ParagraphEditComponent, value: 'paragraph'},
   {title: 'Date', component: DateEditComponent, value: 'date'},
-  {title: 'Time', component: TimeComponent, value: 'time'},
+  {title: 'Time', component: TimeEditComponent, value: 'time'},
   {title: 'File upload', component: FileUploadComponent, value: 'file-upload'},
   {title: 'Checkboxes', component: CheckboxesComponent, value: 'checkboxes'},
   {title: 'Multiple choices', component: MultipleChoicesComponent, value: 'multiple-choices'},
@@ -79,6 +80,15 @@ export const config: Config[] = [
     control: 'date',
     title: 'Date',
     type: 'date',
+    validation: {
+      required: true,
+    }
+  },
+  {
+    id: 5,
+    control: 'time',
+    title: 'Time',
+    type: 'time',
     validation: {
       required: true,
     }

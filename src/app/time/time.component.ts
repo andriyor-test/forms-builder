@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-time',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./time.component.css']
 })
 export class TimeComponent implements OnInit {
+  @Input() control;
+  @Input() group;
 
   constructor() { }
 
