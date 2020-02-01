@@ -29,6 +29,7 @@ import { FormItemComponent } from './form-item/form-item.component';
 import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 import { DynamicControlComponent } from './dynamic-control/dynamic-control.component';
 import { ShortAnswerEditComponent } from './short-answer-edit/short-answer-edit.component';
+import { ParagraphEditComponent } from './paragraph-edit/paragraph-edit.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { ShortAnswerEditComponent } from './short-answer-edit/short-answer-edit.
     EditDialogComponent,
     DynamicControlComponent,
     ShortAnswerEditComponent,
+    ParagraphEditComponent,
   ],
   entryComponents: [
     ShortAnswerComponent,
@@ -57,7 +59,8 @@ import { ShortAnswerEditComponent } from './short-answer-edit/short-answer-edit.
     MultipleChoicesComponent,
     DropDownComponent,
     EditDialogComponent,
-    ShortAnswerEditComponent
+    ShortAnswerEditComponent,
+    ParagraphEditComponent
   ],
   imports: [
     BrowserModule,

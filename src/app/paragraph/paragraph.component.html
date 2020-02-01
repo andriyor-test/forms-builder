@@ -1,4 +1,5 @@
-<mat-form-field>
-  <textarea matInput placeholder="Long answer text"></textarea>
-</mat-form-field>
-
+<ng-container [formGroup]="group">
+  <mat-form-field>
+    <textarea matInput placeholder="Long answer text" [formControlName]="control.control"></textarea>
+  </mat-form-field>
+</ng-container>

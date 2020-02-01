@@ -10,6 +10,7 @@ import {DropDownComponent} from './drop-down/drop-down.component';
 import {ShortAnswerEditComponent} from './short-answer-edit/short-answer-edit.component';
 import {Config} from './models/config.types';
 import {Validators} from '@angular/forms';
+import {ParagraphEditComponent} from './paragraph-edit/paragraph-edit.component';
 
 export const types: AnswerType[] = [
   {title: 'Short answer', component: ShortAnswerComponent, value: 'short' },
@@ -24,7 +25,7 @@ export const types: AnswerType[] = [
 
 export const edit: AnswerType[] = [
   {title: 'Short answer Edit', component: ShortAnswerEditComponent, value: 'short' },
-  {title: 'Paragraph', component: ParagraphComponent, value: 'paragraph'},
+  {title: 'Paragraph', component: ParagraphEditComponent, value: 'paragraph'},
   {title: 'Date', component: DateComponent, value: 'date'},
   {title: 'Time', component: TimeComponent, value: 'time'},
   {title: 'File upload', component: FileUploadComponent, value: 'file-upload'},
@@ -59,6 +60,16 @@ export const config: Config[] = [
     type: 'short',
     validation: {
       min: 18,
+      required: true,
+    }
+  },
+  {
+    id: 4,
+    control: 'about',
+    title: 'About',
+    type: 'paragraph',
+    validation: {
+      maxLength: 140,
       required: true,
     }
   }

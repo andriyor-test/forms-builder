@@ -72,7 +72,7 @@ export class AppComponent implements OnInit {
     this.formConfig = [
       ...this.formConfig,
       {
-        id: 4,
+        id: 20,
         control: 'email',
         title: 'EMail',
         type: 'short',
