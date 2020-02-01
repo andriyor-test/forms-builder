@@ -14,6 +14,7 @@ import {ParagraphEditComponent} from './paragraph-edit/paragraph-edit.component'
 import {DateEditComponent} from './date-edit/date-edit.component';
 import {TimeEditComponent} from './time-edit/time-edit.component';
 import {DropdownEditComponent} from './dropdown-edit/dropdown-edit.component';
+import {MultipleChoicesEditComponent} from './multiple-choices-edit/multiple-choices-edit.component';
 
 export const types: AnswerType[] = [
   {title: 'Short answer', component: ShortAnswerComponent, value: 'short' },
@@ -33,7 +34,7 @@ export const edit: AnswerType[] = [
   {title: 'Time', component: TimeEditComponent, value: 'time'},
   {title: 'File upload', component: FileUploadComponent, value: 'file-upload'},
   {title: 'Checkboxes', component: CheckboxesComponent, value: 'checkboxes'},
-  {title: 'Multiple choices', component: MultipleChoicesComponent, value: 'multiple-choices'},
+  {title: 'Multiple choices', component: MultipleChoicesEditComponent, value: 'multiple-choices'},
   {title: 'Dropdown', component: DropdownEditComponent, value: 'dropdown'},
 ];
 
@@ -108,6 +109,21 @@ export const config: Config[] = [
       {label: 'Black Widow', value: 'black_widow'},
       {label: 'Hulk', value: 'hulk'},
       {label: 'Captain Marvel', value: 'captain_marvel'},
+    ],
+  },
+  {
+    id: 7,
+    control: 'multiple-choices',
+    title: 'Multiple choices',
+    type: 'multiple-choices',
+    validation: {
+      required: true,
+    },
+    options: [
+      { value: 1, label: 'Option 1' },
+      { value: 2, label: 'Option 2' },
+      { value: 3, label: 'Option 3' },
+      { value: 4, label: 'Option 4' },
     ],
   }
 ];

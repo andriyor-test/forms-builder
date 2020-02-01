@@ -10,6 +10,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatRadioModule} from '@angular/material/radio';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
@@ -33,6 +34,7 @@ import { ParagraphEditComponent } from './paragraph-edit/paragraph-edit.componen
 import { DateEditComponent } from './date-edit/date-edit.component';
 import { TimeEditComponent } from './time-edit/time-edit.component';
 import { DropdownEditComponent } from './dropdown-edit/dropdown-edit.component';
+import { MultipleChoicesEditComponent } from './multiple-choices-edit/multiple-choices-edit.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +56,7 @@ import { DropdownEditComponent } from './dropdown-edit/dropdown-edit.component';
     DateEditComponent,
     TimeEditComponent,
     DropdownEditComponent,
+    MultipleChoicesEditComponent,
   ],
   entryComponents: [
     ShortAnswerComponent,
@@ -69,7 +72,8 @@ import { DropdownEditComponent } from './dropdown-edit/dropdown-edit.component';
     ParagraphEditComponent,
     DateEditComponent,
     TimeEditComponent,
-    DropdownEditComponent
+    DropdownEditComponent,
+    MultipleChoicesEditComponent
   ],
   imports: [
     BrowserModule,
@@ -86,7 +90,8 @@ import { DropdownEditComponent } from './dropdown-edit/dropdown-edit.component';
     MatSlideToggleModule,
     ReactiveFormsModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatRadioModule
   ],
   providers: [
     MatDatepickerModule

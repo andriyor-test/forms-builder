@@ -1,1 +1,7 @@
-<p>multiple-choices works!</p>
+<ng-container [formGroup]="group">
+  <mat-radio-group class="radio-group" aria-label="Select an option" [formControlName]="control.control">
+    <mat-radio-button class="radio-button" *ngFor="let food of control.options" [value]="food.value">
+      {{food.label}}
+    </mat-radio-button>
+  </mat-radio-group>
+</ng-container>
