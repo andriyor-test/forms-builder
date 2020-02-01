@@ -11,6 +11,7 @@ import {ShortAnswerEditComponent} from './short-answer-edit/short-answer-edit.co
 import {Config} from './models/config.types';
 import {Validators} from '@angular/forms';
 import {ParagraphEditComponent} from './paragraph-edit/paragraph-edit.component';
+import {DateEditComponent} from './date-edit/date-edit.component';
 
 export const types: AnswerType[] = [
   {title: 'Short answer', component: ShortAnswerComponent, value: 'short' },
@@ -26,7 +27,7 @@ export const types: AnswerType[] = [
 export const edit: AnswerType[] = [
   {title: 'Short answer Edit', component: ShortAnswerEditComponent, value: 'short' },
   {title: 'Paragraph', component: ParagraphEditComponent, value: 'paragraph'},
-  {title: 'Date', component: DateComponent, value: 'date'},
+  {title: 'Date', component: DateEditComponent, value: 'date'},
   {title: 'Time', component: TimeComponent, value: 'time'},
   {title: 'File upload', component: FileUploadComponent, value: 'file-upload'},
   {title: 'Checkboxes', component: CheckboxesComponent, value: 'checkboxes'},
@@ -70,6 +71,15 @@ export const config: Config[] = [
     type: 'paragraph',
     validation: {
       maxLength: 140,
+      required: true,
+    }
+  },
+  {
+    id: 5,
+    control: 'date',
+    title: 'Date',
+    type: 'date',
+    validation: {
       required: true,
     }
   }

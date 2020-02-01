@@ -19,8 +19,6 @@ export class FormItemComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.control);
-    console.log(this.types);
     this.onValueChange();
   }
 
@@ -30,10 +28,8 @@ export class FormItemComponent implements OnInit {
 
     const componentFactory = this.componentFactoryResolver.resolveComponentFactory(answerItem.component);
     const viewContainerRef = this.adHost.viewContainerRef;
-    console.log(viewContainerRef);
     viewContainerRef.clear();
     const componentRef = viewContainerRef.createComponent(componentFactory);
-    componentRef.instance.control = 'asdas';
   }
 
   removeFirmField() {

@@ -7,11 +7,11 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class DateComponent implements OnInit {
   @Input() control;
+  @Input() group;
 
   constructor() { }
 
   ngOnInit() {
-    console.log(this.control);
   }
 
 }

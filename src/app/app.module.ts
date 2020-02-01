@@ -30,6 +30,7 @@ import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 import { DynamicControlComponent } from './dynamic-control/dynamic-control.component';
 import { ShortAnswerEditComponent } from './short-answer-edit/short-answer-edit.component';
 import { ParagraphEditComponent } from './paragraph-edit/paragraph-edit.component';
+import { DateEditComponent } from './date-edit/date-edit.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { ParagraphEditComponent } from './paragraph-edit/paragraph-edit.componen
     DynamicControlComponent,
     ShortAnswerEditComponent,
     ParagraphEditComponent,
+    DateEditComponent,
   ],
   entryComponents: [
     ShortAnswerComponent,
@@ -60,7 +62,8 @@ import { ParagraphEditComponent } from './paragraph-edit/paragraph-edit.componen
     DropDownComponent,
     EditDialogComponent,
     ShortAnswerEditComponent,
-    ParagraphEditComponent
+    ParagraphEditComponent,
+    DateEditComponent
   ],
   imports: [
     BrowserModule,

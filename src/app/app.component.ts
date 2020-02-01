@@ -14,7 +14,6 @@ import {config, validators} from './constants';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  formFields = [1];
   bioSection: FormGroup;
   formConfig: Config[] = config;
   validators = validators;
@@ -62,10 +61,6 @@ export class AppComponent implements OnInit {
 
   callingFunction() {
     console.log(this.bioSection.value);
-  }
-
-  addFormField() {
-    this.formFields.push(1);
   }
 
   addFormFieldBuilder() {
