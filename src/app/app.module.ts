@@ -35,6 +35,7 @@ import { DateEditComponent } from './date-edit/date-edit.component';
 import { TimeEditComponent } from './time-edit/time-edit.component';
 import { DropdownEditComponent } from './dropdown-edit/dropdown-edit.component';
 import { MultipleChoicesEditComponent } from './multiple-choices-edit/multiple-choices-edit.component';
+import { CheckboxesEditComponent } from './checkboxes-edit/checkboxes-edit.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { MultipleChoicesEditComponent } from './multiple-choices-edit/multiple-c
     TimeEditComponent,
     DropdownEditComponent,
     MultipleChoicesEditComponent,
+    CheckboxesEditComponent,
   ],
   entryComponents: [
     ShortAnswerComponent,
@@ -73,7 +75,8 @@ import { MultipleChoicesEditComponent } from './multiple-choices-edit/multiple-c
     DateEditComponent,
     TimeEditComponent,
     DropdownEditComponent,
-    MultipleChoicesEditComponent
+    MultipleChoicesEditComponent,
+    CheckboxesEditComponent
   ],
   imports: [
     BrowserModule,

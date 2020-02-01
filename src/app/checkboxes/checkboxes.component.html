@@ -1,7 +1,3 @@
-<div class="checkboxes" *ngFor="let checkbox of checkboxes">
-  <mat-checkbox>{{checkbox.title}}</mat-checkbox>
-</div>
-
-<button mat-button (click)="addCheckbox()">
-  Add option
-</button>
+<ng-container [formGroup]="group">
+  <mat-checkbox [formControlName]="control.control">{{control.title}}</mat-checkbox>
+</ng-container>

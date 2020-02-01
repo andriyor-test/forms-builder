@@ -15,6 +15,7 @@ import {DateEditComponent} from './date-edit/date-edit.component';
 import {TimeEditComponent} from './time-edit/time-edit.component';
 import {DropdownEditComponent} from './dropdown-edit/dropdown-edit.component';
 import {MultipleChoicesEditComponent} from './multiple-choices-edit/multiple-choices-edit.component';
+import {CheckboxesEditComponent} from './checkboxes-edit/checkboxes-edit.component';
 
 export const types: AnswerType[] = [
   {title: 'Short answer', component: ShortAnswerComponent, value: 'short' },
@@ -33,7 +34,7 @@ export const edit: AnswerType[] = [
   {title: 'Date', component: DateEditComponent, value: 'date'},
   {title: 'Time', component: TimeEditComponent, value: 'time'},
   {title: 'File upload', component: FileUploadComponent, value: 'file-upload'},
-  {title: 'Checkboxes', component: CheckboxesComponent, value: 'checkboxes'},
+  {title: 'Checkboxes', component: CheckboxesEditComponent, value: 'checkboxes'},
   {title: 'Multiple choices', component: MultipleChoicesEditComponent, value: 'multiple-choices'},
   {title: 'Dropdown', component: DropdownEditComponent, value: 'dropdown'},
 ];
@@ -125,6 +126,15 @@ export const config: Config[] = [
       { value: 3, label: 'Option 3' },
       { value: 4, label: 'Option 4' },
     ],
+  },
+  {
+    id: 8,
+    control: 'checkboxes',
+    title: 'Checkboxes',
+    type: 'checkboxes',
+    validation: {
+      required: true,
+    }
   }
 ];
 
