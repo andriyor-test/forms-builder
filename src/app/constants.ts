@@ -13,6 +13,7 @@ import {Validators} from '@angular/forms';
 import {ParagraphEditComponent} from './paragraph-edit/paragraph-edit.component';
 import {DateEditComponent} from './date-edit/date-edit.component';
 import {TimeEditComponent} from './time-edit/time-edit.component';
+import {DropdownEditComponent} from './dropdown-edit/dropdown-edit.component';
 
 export const types: AnswerType[] = [
   {title: 'Short answer', component: ShortAnswerComponent, value: 'short' },
@@ -33,7 +34,7 @@ export const edit: AnswerType[] = [
   {title: 'File upload', component: FileUploadComponent, value: 'file-upload'},
   {title: 'Checkboxes', component: CheckboxesComponent, value: 'checkboxes'},
   {title: 'Multiple choices', component: MultipleChoicesComponent, value: 'multiple-choices'},
-  {title: 'Dropdown', component: DropDownComponent, value: 'dropdown'},
+  {title: 'Dropdown', component: DropdownEditComponent, value: 'dropdown'},
 ];
 
 export const config: Config[] = [
@@ -92,6 +93,22 @@ export const config: Config[] = [
     validation: {
       required: true,
     }
+  },
+  {
+    id: 6,
+    control: 'dropdown',
+    title: 'Dropdown',
+    type: 'dropdown',
+    validation: {
+      required: true,
+    },
+    options: [
+      {label: 'Iron Man', value: 'iron_man'},
+      {label: 'Captain America', value: 'captain_america'},
+      {label: 'Black Widow', value: 'black_widow'},
+      {label: 'Hulk', value: 'hulk'},
+      {label: 'Captain Marvel', value: 'captain_marvel'},
+    ],
   }
 ];
 

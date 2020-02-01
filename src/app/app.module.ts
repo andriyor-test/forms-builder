@@ -32,6 +32,7 @@ import { ShortAnswerEditComponent } from './short-answer-edit/short-answer-edit.
 import { ParagraphEditComponent } from './paragraph-edit/paragraph-edit.component';
 import { DateEditComponent } from './date-edit/date-edit.component';
 import { TimeEditComponent } from './time-edit/time-edit.component';
+import { DropdownEditComponent } from './dropdown-edit/dropdown-edit.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { TimeEditComponent } from './time-edit/time-edit.component';
     ParagraphEditComponent,
     DateEditComponent,
     TimeEditComponent,
+    DropdownEditComponent,
   ],
   entryComponents: [
     ShortAnswerComponent,
@@ -66,7 +68,8 @@ import { TimeEditComponent } from './time-edit/time-edit.component';
     ShortAnswerEditComponent,
     ParagraphEditComponent,
     DateEditComponent,
-    TimeEditComponent
+    TimeEditComponent,
+    DropdownEditComponent
   ],
   imports: [
     BrowserModule,

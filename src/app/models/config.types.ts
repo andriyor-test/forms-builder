@@ -4,6 +4,7 @@ export interface Config {
   title: string;
   type: string;
   validation?: Validation;
+  options?: Option[];
 }
 
 interface Validation {
@@ -13,4 +14,9 @@ interface Validation {
   maxLength?: number;
   min?: number;
   max?: number;
+}
+
+interface Option {
+  label: string;
+  value: string;
 }

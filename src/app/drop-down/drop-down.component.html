@@ -1,9 +1,9 @@
-<div class="dropdown" *ngFor="let input of inputs">
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Short answer text" value="">
-  </mat-form-field>
-</div>
+<mat-form-field [formGroup]="group">
+  <mat-label>Favorite food</mat-label>
+  <mat-select [formControlName]="control.control">
+    <mat-option *ngFor="let food of control.options" [value]="food.value">
+      {{food.label}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
 
-<button mat-button (click)="addInput()">
-  Add option
-</button>

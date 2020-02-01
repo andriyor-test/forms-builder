@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-drop-down',
@@ -6,15 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./drop-down.component.css']
 })
 export class DropDownComponent implements OnInit {
-  inputs = [1];
+  @Input() control;
+  @Input() group;
 
   constructor() { }
 
   ngOnInit() {
   }
-
-  addInput() {
-    this.inputs.push(1);
-  }
-
 }
