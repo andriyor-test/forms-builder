@@ -1,1 +1,11 @@
-<p>multiple-choices-edit works!</p>
+<ng-container *ngFor="let option of control.options">
+  <div>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Label" [value]="option.label">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Value" [value]="option.value" >
+    </mat-form-field>
+  </div>
+</ng-container>
