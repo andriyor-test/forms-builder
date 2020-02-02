@@ -1,9 +1,9 @@
 <form [formGroup]="bioSection">
-  <div *ngFor="let item of formConfig; let i = index">
-    <app-dynamic-control [control]="item" [group]="bioSection">
+  <div *ngFor="let configItem of formConfig; let i = index">
+    <app-dynamic-control [control]="configItem" [group]="bioSection">
     </app-dynamic-control>
 
-    <button mat-button (click)="openDialog(item)">
+    <button mat-button (click)="openDialog(configItem)">
       Edit
     </button>
     <button mat-button (click)="onDeleteItem(i)">

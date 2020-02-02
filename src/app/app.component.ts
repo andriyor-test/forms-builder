@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
+import {FormBuilder, FormGroup, FormControl} from '@angular/forms';
 import {MatDialog} from '@angular/material/dialog';
 import {EditDialogComponent} from './edit-dialog/edit-dialog.component';
 import cloneDeep from 'lodash/cloneDeep';
@@ -21,14 +21,15 @@ export class AppComponent implements OnInit {
     this.bioSection = this.fb.group(this.getControl(this.formConfig));
   }
 
-  openDialog(item): void {
+  openDialog(configItem): void {
     const dialogRef = this.dialog.open(EditDialogComponent, {
       width: '95%',
-      data: item
+      data: configItem,
     });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
+        console.log(result);
         const index = this.formConfig.findIndex(i => i.id === result.id);
         this.formConfig[index] = result;
         this.formConfig = cloneDeep(this.formConfig);

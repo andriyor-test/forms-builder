@@ -22,8 +22,17 @@ export class EditDialogComponent {
       type: [data.type],
       validation:   this.fb.group({
         required: [data.validation.required],
-      }),
+      })
     });
+    if (data.options) {
+      this.editForm.addControl('options', this.fb.array(data.options.map((option) => {
+          return this.fb.group({
+            value: option.value,
+            label: option.label,
+          });
+        })
+      ));
+    }
   }
 
   cancel(): void {

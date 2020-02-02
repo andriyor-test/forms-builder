@@ -13,6 +13,7 @@ export class FormItemComponent implements OnInit {
   selectedAnswerType;
   types: AnswerType[] = edit;
   @Input() control;
+  @Input() form;
   @ViewChild(AnswerDirective, {static: true}) adHost: AnswerDirective;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver) {
@@ -33,6 +34,7 @@ export class FormItemComponent implements OnInit {
     viewContainerRef.clear();
     const componentRef = viewContainerRef.createComponent(componentFactory);
     componentRef.instance.control = this.control;
+    componentRef.instance.form = this.form;
   }
 
   removeFirmField() {
