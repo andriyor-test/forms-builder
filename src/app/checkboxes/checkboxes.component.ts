@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {FormArray} from '@angular/forms';
 
 @Component({
   selector: 'app-checkboxes',
@@ -12,6 +13,11 @@ export class CheckboxesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(this.group);
+  }
+
+  get checkboxes() {
+    return this.group.get('checkboxes') as FormArray;
   }
 
 }

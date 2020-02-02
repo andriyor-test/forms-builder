@@ -1,6 +1,6 @@
-<form [formGroup]="bioSection">
+<form [formGroup]="form">
   <div *ngFor="let configItem of formConfig; let i = index">
-    <app-dynamic-control [control]="configItem" [group]="bioSection">
+    <app-dynamic-control [control]="configItem" [group]="form">
     </app-dynamic-control>
 
     <button mat-button (click)="openDialog(configItem)">
@@ -11,14 +11,14 @@
     </button>
   </div>
 
-  <button type="submit" [disabled]="!bioSection.valid" (click)="callingFunction()">
+  <button type="submit" [disabled]="!form.valid" (click)="callingFunction()">
     Submit
   </button>
   <p>
-    Real-time data: {{ bioSection.value | json }}
+    Real-time data: {{ form.value | json }}
   </p>
   <p>
-    Your form status is : {{ bioSection.status }}
+    Your form status is : {{ form.status }}
   </p>
 </form>
 

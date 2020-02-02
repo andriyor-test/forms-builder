@@ -13,12 +13,13 @@ import {config, validators} from './constants/constants';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  bioSection: FormGroup;
+  form: FormGroup;
   formConfig: Config[] = config;
   validators = validators;
 
   constructor(private fb: FormBuilder, public dialog: MatDialog) {
-    this.bioSection = this.fb.group(this.getControl(this.formConfig));
+    this.form = this.fb.group(this.getControl(this.formConfig));
+    console.log(this.form);
   }
 
   openDialog(configItem): void {
@@ -33,7 +34,7 @@ export class AppComponent implements OnInit {
         const index = this.formConfig.findIndex(i => i.id === result.id);
         this.formConfig[index] = result;
         this.formConfig = cloneDeep(this.formConfig);
-        this.bioSection = this.fb.group(this.getControl(this.formConfig));
+        this.form = this.fb.group(this.getControl(this.formConfig));
       }
     });
   }
@@ -55,13 +56,23 @@ export class AppComponent implements OnInit {
           }
         }
       }
-      form[i.control] = new FormControl(i.value || '', fieldValidators);
+      if (i.type === 'checkboxes') {
+        form[i.control] = this.fb.array(i.checkboxes.map((option) => {
+            return this.fb.group({
+              value: option.value,
+              label: option.label,
+            });
+          })
+        );
+      } else {
+        form[i.control] = new FormControl(i.value || '', fieldValidators);
+      }
     }
     return form;
   }
 
   callingFunction() {
-    console.log(this.bioSection.value);
+    console.log(this.form.value);
   }
 
   addFormFieldBuilder() {
@@ -78,12 +89,12 @@ export class AppComponent implements OnInit {
         }
       }];
     this.formConfig = cloneDeep(this.formConfig);
-    this.bioSection = this.fb.group(this.getControl(this.formConfig));
+    this.form = this.fb.group(this.getControl(this.formConfig));
   }
 
   onDeleteItem(index) {
     this.formConfig.splice(index, 1);
-    this.bioSection = this.fb.group(this.getControl(this.formConfig));
+    this.form = this.fb.group(this.getControl(this.formConfig));
   }
 
   editControl() {

@@ -1,3 +1,9 @@
-<ng-container [formGroup]="group">
-  <mat-checkbox [formControlName]="control.control">{{control.title}}</mat-checkbox>
-</ng-container>
+<form [formGroup]="group">
+  <ng-container formArrayName="checkboxes">
+    <ng-container *ngFor="let checkbox of control.checkboxes; let i = index">
+      <div [formArrayName]="i">
+        <mat-checkbox formControlName="value">{{checkbox.label}}</mat-checkbox>
+      </div>
+    </ng-container>
+  </ng-container>
+</form>

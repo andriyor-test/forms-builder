@@ -142,6 +142,12 @@ export const config: Config[] = [
     control: 'checkboxes',
     title: 'Checkboxes',
     type: 'checkboxes',
+    checkboxes: [
+      { value: true, label: 'Checkbox 1' },
+      { value: false, label: 'Checkbox 2' },
+      { value: true, label: 'Checkbox 3' },
+      { value: false, label: 'Checkbox 4' },
+    ],
     validation: {
       required: true,
     }

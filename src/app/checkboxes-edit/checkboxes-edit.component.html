@@ -1,1 +1,13 @@
-<p>checkboxes-edit works!</p>
+<form  [formGroup]="form">
+  <ng-container formArrayName="checkboxes">
+    <ng-container *ngFor="let _ of checkboxes.controls; let i = index">
+      <div [formArrayName]="i">
+        <mat-checkbox formControlName="required" formControlName="value"></mat-checkbox>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Value" formControlName="label" >
+        </mat-form-field>
+      </div>
+    </ng-container>
+  </ng-container>
+</form>
