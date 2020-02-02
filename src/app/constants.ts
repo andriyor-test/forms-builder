@@ -42,6 +42,7 @@ export const edit: AnswerType[] = [
 export const config: Config[] = [
   {
     id: 1,
+    value: 'default text',
     control: 'firstName',
     title: 'First Name',
     type: 'short',
@@ -55,7 +56,6 @@ export const config: Config[] = [
     title: 'Last Name',
     type: 'short',
     validation: {
-      required: true,
     }
   },
   {

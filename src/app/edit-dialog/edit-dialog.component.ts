@@ -20,6 +20,9 @@ export class EditDialogComponent {
       control: [data.control],
       title: [data.title],
       type: [data.type],
+      validation:   this.fb.group({
+        required: [data.validation.required],
+      }),
     });
   }
 

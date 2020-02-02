@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
-import { Validators } from '@angular/forms';
+import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
 import {MatDialog} from '@angular/material/dialog';
 import {EditDialogComponent} from './edit-dialog/edit-dialog.component';
 import cloneDeep from 'lodash/cloneDeep';
@@ -49,12 +48,13 @@ export class AppComponent implements OnInit {
         if (i.validation.hasOwnProperty(j)) {
           if (i.validation[j] === true) {
             fieldValidators.push(this.validators[j]);
+          } else if (i.validation[j] === false) {
           } else {
             fieldValidators.push(this.validators[j](i.validation[j]));
           }
         }
       }
-      form[i.control] = ['', Validators.compose(fieldValidators)];
+      form[i.control] = new FormControl(i.value || '', fieldValidators);
     }
     return form;
   }

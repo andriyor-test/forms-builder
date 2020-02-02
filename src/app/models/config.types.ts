@@ -2,6 +2,7 @@ export interface Config {
   id: number;
   control: string;
   title: string;
+  value?: number | string | boolean;
   type: string;
   validation?: Validation;
   options?: Option[];

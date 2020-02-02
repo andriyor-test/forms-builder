@@ -8,12 +8,15 @@
     <mat-form-field class="example-full-width">
       <input matInput placeholder="Title" [value]="data.title" formControlName="title">
     </mat-form-field>
+
+    <ng-container formGroupName="validation">
+      <mat-checkbox formControlName="required" [value]="data.validation.required">Required</mat-checkbox>
+    </ng-container>
   </form>
 
   <app-form-item
     [control]="data"
   >
-
   </app-form-item>
 </div>
 
