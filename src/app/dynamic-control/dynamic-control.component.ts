@@ -1,7 +1,7 @@
 import {Component, ComponentFactoryResolver, Input, OnInit, ViewChild} from '@angular/core';
 import {AnswerDirective} from '../answer.directive';
 import {AnswerType} from '../models/answer-types.types';
-import { types } from '../constants';
+import { types } from '../constants/components';
 
 @Component({
   selector: 'app-dynamic-control',

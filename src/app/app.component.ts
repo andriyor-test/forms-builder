@@ -4,7 +4,7 @@ import {MatDialog} from '@angular/material/dialog';
 import {EditDialogComponent} from './edit-dialog/edit-dialog.component';
 import cloneDeep from 'lodash/cloneDeep';
 import {Config} from './models/config.types';
-import {config, validators} from './constants';
+import {config, validators} from './constants/constants';
 
 
 @Component({

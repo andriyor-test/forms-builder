@@ -2,7 +2,7 @@
   <mat-form-field class="types">
     <mat-label>Answer type</mat-label>
     <mat-select [(value)]="selectedInputType" (valueChange)="onValueChange()">
-      <mat-option *ngFor="let inputType of inputTypes" [value]="inputType" >
+      <mat-option *ngFor="let inputType of availableInputTypes" [value]="inputType" >
         {{inputType.title}}
       </mat-option>
     </mat-select>
@@ -11,9 +11,16 @@
   <mat-form-field class="types">
     <mat-label>Answer type</mat-label>
     <mat-select [(value)]="selectedOption">
-      <mat-option *ngFor="let option of selectedInputType?.options" [value]="option" >
+      <mat-option *ngFor="let option of selectedInputType?.options" [value]="option.validator" >
         {{option.title}}
       </mat-option>
     </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput
+           [type]="control.inputType ? control.inputType : 'text'"
+           [value]="value"
+    >
   </mat-form-field>
 </div>

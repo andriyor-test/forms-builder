@@ -1,6 +1,6 @@
 import {Component, ComponentFactoryResolver, Input, OnInit, ViewChild} from '@angular/core';
 // import { types } from '../constants';
-import { edit } from '../constants';
+import { edit } from '../constants/components';
 import {AnswerType} from '../models/answer-types.types';
 import {AnswerDirective} from '../answer.directive';
 
@@ -18,7 +18,9 @@ export class FormItemComponent implements OnInit {
   constructor(private componentFactoryResolver: ComponentFactoryResolver) {
   }
 
+
   ngOnInit() {
+    console.log(this.control);
     this.onValueChange();
   }
 
@@ -30,6 +32,7 @@ export class FormItemComponent implements OnInit {
     const viewContainerRef = this.adHost.viewContainerRef;
     viewContainerRef.clear();
     const componentRef = viewContainerRef.createComponent(componentFactory);
+    componentRef.instance.control = this.control;
   }
 
   removeFirmField() {
