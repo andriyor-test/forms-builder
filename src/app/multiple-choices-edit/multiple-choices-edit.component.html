@@ -1,11 +1,15 @@
-<ng-container *ngFor="let option of control.options">
-  <div>
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Label" [value]="option.label">
-    </mat-form-field>
+<form  [formGroup]="form">
+  <ng-container formArrayName="options">
+    <ng-container *ngFor="let _ of options.controls; let i = index">
+      <div [formArrayName]="i">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Label" formControlName="label">
+        </mat-form-field>
 
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Value" [value]="option.value" >
-    </mat-form-field>
-  </div>
-</ng-container>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Value" formControlName="value" >
+        </mat-form-field>
+      </div>
+    </ng-container>
+  </ng-container>
+</form>

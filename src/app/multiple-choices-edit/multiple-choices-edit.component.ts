@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {FormArray, FormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-multiple-choices-edit',
@@ -7,11 +8,25 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class MultipleChoicesEditComponent implements OnInit {
   @Input() control;
+  form;
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
-    console.log(this.control);
+    this.form = this.fb.group({
+      options: this.fb.array(this.control.options.map((option) => {
+          return this.fb.group({
+            value: option.value,
+            label: option.label,
+          });
+        })
+      )
+    });
+    console.log(this.form);
+  }
+
+  get options() {
+    return this.form.get('options') as FormArray;
   }
 
 }
