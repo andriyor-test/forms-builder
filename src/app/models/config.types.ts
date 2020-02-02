@@ -4,6 +4,7 @@ export interface Config {
   title: string;
   value?: number | string | boolean;
   type: string;
+  inputType?: string;
   validation?: Validation;
   options?: Option[];
 }

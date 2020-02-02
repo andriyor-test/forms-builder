@@ -1,3 +1,12 @@
 <mat-form-field class="example-full-width" [formGroup]="group">
-  <input matInput [placeholder]="control.title" [formControlName]="control.control">
+  <input matInput [placeholder]="control.title"
+         [type]="control.inputType ? control.inputType : 'text'"
+         [formControlName]="control.control"
+  >
+  <mat-error *ngIf="group.controls[control.control].hasError('email') && !group.controls[control.control].hasError('required')">
+    Please enter a valid email address
+  </mat-error>
+  <mat-error *ngIf="group.controls[control.control].hasError('required')">
+    Is <strong>required</strong> field
+  </mat-error>
 </mat-form-field>

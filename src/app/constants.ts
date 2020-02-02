@@ -59,10 +59,21 @@ export const config: Config[] = [
     }
   },
   {
+    id: 21,
+    control: 'email',
+    title: 'EMail',
+    type: 'short',
+    validation: {
+      email: true,
+      required: true,
+    }
+  },
+  {
     id: 3,
     control: 'age',
     title: 'Age',
     type: 'short',
+    inputType: 'number',
     validation: {
       min: 18,
       required: true,
