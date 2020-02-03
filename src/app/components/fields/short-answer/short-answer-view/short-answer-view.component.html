@@ -9,4 +9,16 @@
   <mat-error *ngIf="group.controls[control.control].hasError('required')">
     Is <strong>required</strong> field
   </mat-error>
+  <mat-error *ngIf="group.controls[control.control].hasError('minlength') && !group.controls[control.control].hasError('required')">
+    min Length
+  </mat-error>
+  <mat-error *ngIf="group.controls[control.control].hasError('maxlength') && !group.controls[control.control].hasError('required')">
+    max Length
+  </mat-error>
+  <mat-error *ngIf="group.controls[control.control].hasError('max') && !group.controls[control.control].hasError('required')">
+    max
+  </mat-error>
+  <mat-error *ngIf="group.controls[control.control].hasError('min') && !group.controls[control.control].hasError('required')">
+    max
+  </mat-error>
 </mat-form-field>

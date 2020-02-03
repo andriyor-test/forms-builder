@@ -9,9 +9,8 @@ import {FormArray, FormControl, FormGroup} from '@angular/forms';
 })
 export class ShortAnswerEditComponent implements OnInit {
   selectedInputType;
-  selectedOption;
+  selected;
   availableInputTypes = inputTypes;
-  value;
   @Input() control;
   @Input() form;
   availableValidationControl;
@@ -19,27 +18,12 @@ export class ShortAnswerEditComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    const controls = Object.keys(this.validation.controls);
-    this.availableValidationControl = controls.filter(c => c !== 'required');
-    // console.log(this.availableValidationControl);
-
-    // // TODO: use more suitable data structure
+    this.availableValidationControl = Object.keys(this.validation.controls);
     this.selectedInputType = this.availableInputTypes.find(type => type.value === this.control.inputType);
     if (this.control.inputType === 'email') {
       this.selectedInputType = this.availableInputTypes[1];
+      this.form.controls.inputType.setValue('text');
     }
-    console.log(this.selectedInputType);
-
-    const options = this.selectedInputType.options.map(type => type.validator);
-    const controlKeys = Object.keys(this.validation);
-    for (const i of options) {
-      if (controlKeys.includes(i)) {
-        this.selectedOption = i;
-      }
-    }
-    this.value = this.validation[this.selectedOption];
-    console.log(this.selectedOption);
-    // this.control.validation['max'] = 30;
   }
 
   get inputType() {
@@ -55,12 +39,39 @@ export class ShortAnswerEditComponent implements OnInit {
     if (this.control.inputType === 'email') {
       this.selectedInputType = this.availableInputTypes[1];
     }
+    for (const c of this.availableValidationControl) {
+      this.validation.removeControl(c);
+    }
+    this.availableValidationControl = [];
   }
 
   onRemoveValidator(validator) {
     console.log(validator);
     this.validation.removeControl(validator);
     this.availableValidationControl = this.availableValidationControl.filter(c => c !== validator);
+  }
+
+  onAddValidator() {
+    if (this.inputType.value === 'text') {
+      this.availableValidationControl.push('maxLength');
+      this.validation.addControl('maxLength',  new FormControl(''));
+    } else if (this.inputType.value === 'number') {
+      this.availableValidationControl.push('max');
+      this.validation.addControl('max',  new FormControl(''));
+    }
+  }
+
+  onValidatorTypeChange(value, i) {
+    console.log(value, i);
+    console.log(this.availableValidationControl[i]);
+    this.validation.removeControl(this.availableValidationControl[i]);
+    this.availableValidationControl.splice(i, 1);
+    if (value === 'email') {
+      this.validation.addControl('email',  new FormControl(true));
+    } else {
+      this.validation.addControl(value,  new FormControl(''));
+    }
+    this.availableValidationControl.push(value);
   }
 
 }

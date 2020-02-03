@@ -8,26 +8,36 @@
     </mat-select>
   </mat-form-field>
 
-  <div [formGroup]="validation" *ngFor="let control of availableValidationControl">
+  <div [formGroup]="validation" *ngFor="let control of availableValidationControl; let i = index">
 
+    <ng-container *ngIf="control !== 'required'">
     <mat-form-field class="types" >
       <mat-label>Validator type</mat-label>
-      <mat-select [(value)]="control">
+      <mat-select [(value)]="control" (valueChange)="onValidatorTypeChange(control, i)">
         <mat-option *ngFor="let option of selectedInputType?.options" [value]="option.validator" >
           {{option.title}}
         </mat-option>
       </mat-select>
     </mat-form-field>
 
-    <mat-form-field>
-      <input matInput
-             [type]="control.inputType ? control.inputType : 'text'"
-             [formControlName]="control"
-      >
-    </mat-form-field>
+      <ng-container *ngIf="control != 'email'">
+        <mat-form-field>
+          <input matInput
+                 [type]="control.inputType ? control.inputType : 'text'"
+                 [formControlName]="control"
+          >
+        </mat-form-field>
+      </ng-container>
 
     <button mat-button (click)="onRemoveValidator(control)">
       Remove Validator
+    </button>
+    </ng-container>
+  </div>
+
+  <div>
+    <button mat-button (click)="onAddValidator()">
+      Add Validator
     </button>
   </div>
 

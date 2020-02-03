@@ -10,7 +10,9 @@
     </mat-form-field>
 
     <ng-container formGroupName="validation">
-      <mat-checkbox formControlName="required" [value]="data.validation.required">Required</mat-checkbox>
+      <mat-checkbox formControlName="required" [value]="data.validation?.required ? true : false">
+        Required
+      </mat-checkbox>
     </ng-container>
   </form>
 

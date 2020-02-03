@@ -33,7 +33,6 @@ export const config: Config[] = [
     inputType: 'text',
     validation: {
       required: true,
-      maxLength: 160,
       minLength: 15,
     }
   },
@@ -44,6 +43,7 @@ export const config: Config[] = [
     type: 'short',
     inputType: 'text',
     validation: {
+      required: false,
     }
   },
   {
@@ -150,5 +150,6 @@ export const validators = {
   required: Validators.required,
   email: Validators.email,
   maxLength: Validators.maxLength,
-  minLength: Validators.minLength
+  minLength: Validators.minLength,
+  regexp: Validators.pattern,
 };
