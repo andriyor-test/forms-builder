@@ -23,4 +23,8 @@ export class MultipleChoicesEditComponent {
     }));
   }
 
+  onRemoveOption(i) {
+    this.options.removeAt(i);
+  }
+
 }

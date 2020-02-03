@@ -23,4 +23,8 @@ export class CheckboxesEditComponent {
     }));
   }
 
+  onRemoveCheckbox(i) {
+    this.options.removeAt(i);
+  }
+
 }

@@ -9,11 +9,15 @@
         <mat-form-field class="example-full-width">
           <input matInput placeholder="Value" formControlName="value" >
         </mat-form-field>
+
+        <button mat-button (click)="onRemoveOption(i)">
+          Remove option
+        </button>
       </div>
     </ng-container>
   </ng-container>
 </form>
 
 <button mat-button (click)="onAddRadio()">
-  Add checkbox
+  Add option
 </button>

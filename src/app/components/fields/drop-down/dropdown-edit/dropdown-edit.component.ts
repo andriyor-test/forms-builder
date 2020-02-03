@@ -23,4 +23,8 @@ export class DropdownEditComponent {
     }));
   }
 
+  onRemoveItem(i) {
+    this.options.removeAt(i);
+  }
+
 }
