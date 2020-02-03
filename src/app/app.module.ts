@@ -21,7 +21,7 @@ import { ShortAnswerViewComponent } from './components/fields/short-answer/short
 import { ParagraphViewComponent } from './components/fields/paragraph/paragraph-view/paragraph-view.component';
 import { DateViewComponent } from './components/fields/date/date-view/date-view.component';
 import { TimeViewComponent } from './components/fields/time/time-view/time-view.component';
-import { FileUploadComponent } from './components/fields/file-upload/file-upload.component';
+import { FileUploadViewComponent } from './components/fields/file-upload/file-upload-view/file-upload-view.component';
 import { CheckboxesViewComponent } from './components/fields/checkboxes/checkboxes-view/checkboxes-view.component';
 import { MultipleChoicesViewComponent } from './components/fields/multiple-choices/multiple-choices-view/multiple-choices-view.component';
 import {AnswerDirective} from './answer.directive';
@@ -36,6 +36,7 @@ import { TimeEditComponent } from './components/fields/time/time-edit/time-edit.
 import { DropdownEditComponent } from './components/fields/drop-down/dropdown-edit/dropdown-edit.component';
 import { MultipleChoicesEditComponent } from './components/fields/multiple-choices/multiple-choices-edit/multiple-choices-edit.component';
 import { CheckboxesEditComponent } from './components/fields/checkboxes/checkboxes-edit/checkboxes-edit.component';
+import { FileUploadEditComponent } from './components/fields/file-upload/file-upload-edit/file-upload-edit.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import { CheckboxesEditComponent } from './components/fields/checkboxes/checkbox
     ParagraphViewComponent,
     DateViewComponent,
     TimeViewComponent,
-    FileUploadComponent,
+    FileUploadViewComponent,
     CheckboxesViewComponent,
     MultipleChoicesViewComponent,
     AnswerDirective,
@@ -59,13 +60,14 @@ import { CheckboxesEditComponent } from './components/fields/checkboxes/checkbox
     DropdownEditComponent,
     MultipleChoicesEditComponent,
     CheckboxesEditComponent,
+    FileUploadEditComponent,
   ],
   entryComponents: [
     ShortAnswerViewComponent,
     ParagraphViewComponent,
     DateViewComponent,
     TimeViewComponent,
-    FileUploadComponent,
+    FileUploadViewComponent,
     CheckboxesViewComponent,
     MultipleChoicesViewComponent,
     DropDownViewComponent,

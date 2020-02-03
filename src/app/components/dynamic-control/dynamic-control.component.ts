@@ -1,7 +1,8 @@
 import {Component, ComponentFactoryResolver, Input, OnInit, ViewChild} from '@angular/core';
+
 import {AnswerDirective} from '../../answer.directive';
-import {AnswerType} from '../../models/answer-types.types';
-import { types } from '../../constants/components';
+import {ComponentType} from '../../models/answer-types.types';
+import {components} from '../../constants/components';
 
 @Component({
   selector: 'app-dynamic-control',
@@ -11,7 +12,7 @@ import { types } from '../../constants/components';
 export class DynamicControlComponent implements OnInit {
   @Input() control;
   @Input() group;
-  types: AnswerType[] = types;
+  types: ComponentType[] = components;
   @ViewChild(AnswerDirective, {static: true}) adHost: AnswerDirective;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver) { }
@@ -20,7 +21,7 @@ export class DynamicControlComponent implements OnInit {
     const selectedAnswerTypeIndex = this.types.findIndex(t => t.value === this.control.type );
     const answerItem = this.types[selectedAnswerTypeIndex];
 
-    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(answerItem.component);
+    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(answerItem.viewComponent);
     const viewContainerRef = this.adHost.viewContainerRef;
     viewContainerRef.clear();
     const componentRef = viewContainerRef.createComponent(componentFactory);

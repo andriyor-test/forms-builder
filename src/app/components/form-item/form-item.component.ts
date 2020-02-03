@@ -1,6 +1,7 @@
 import {Component, ComponentFactoryResolver, Input, OnInit, ViewChild} from '@angular/core';
-import { edit } from '../../constants/components';
-import {AnswerType} from '../../models/answer-types.types';
+
+import {components} from '../../constants/components';
+import {ComponentType} from '../../models/answer-types.types';
 import {AnswerDirective} from '../../answer.directive';
 
 @Component({
@@ -9,7 +10,7 @@ import {AnswerDirective} from '../../answer.directive';
   styleUrls: ['./form-item.component.css']
 })
 export class FormItemComponent implements OnInit {
-  types: AnswerType[] = edit;
+  types: ComponentType[] = components;
   @Input() control;
   @Input() form;
   @ViewChild(AnswerDirective, {static: true}) adHost: AnswerDirective;
@@ -24,7 +25,7 @@ export class FormItemComponent implements OnInit {
     const selectedAnswerTypeIndex = this.types.findIndex(t => t.value === this.control.type );
     const answerItem = this.types[selectedAnswerTypeIndex];
 
-    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(answerItem.component);
+    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(answerItem.editComponent);
     const viewContainerRef = this.adHost.viewContainerRef;
     viewContainerRef.clear();
     const componentRef = viewContainerRef.createComponent(componentFactory);

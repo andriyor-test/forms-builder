@@ -1,7 +1,8 @@
 import { Type } from '@angular/core';
 
-export interface AnswerType {
+export interface ComponentType {
   title: string;
-  component: Type<any>;
+  viewComponent: Type<any>;
+  editComponent: Type<any>;
   value: string;
 }
