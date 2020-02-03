@@ -13,12 +13,12 @@ export class CheckboxesEditComponent {
   constructor(private fb: FormBuilder) {}
 
 
-  get checkboxes() {
-    return this.form.get('checkboxes') as FormArray;
+  get options() {
+    return this.form.get('options') as FormArray;
   }
 
   onAddCheckbox() {
-    this.checkboxes.push(this.fb.group({
+    this.options.push(this.fb.group({
       value: false,
       label: '',
     }));

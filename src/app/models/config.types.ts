@@ -7,7 +7,6 @@ export interface Config {
   inputType?: string;
   validation?: Validation;
   options?: Option[];
-  checkboxes?: Checkbox[];
 }
 
 interface Validation {
@@ -21,10 +20,6 @@ interface Validation {
 
 interface Option {
   label: string;
-  value: string | number;
+  value: string | number | boolean;
 }
 
-interface Checkbox {
-  label: string;
-  value: boolean;
-}

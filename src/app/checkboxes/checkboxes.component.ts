@@ -13,11 +13,10 @@ export class CheckboxesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.group);
   }
 
-  get checkboxes() {
-    return this.group.get('checkboxes') as FormArray;
+  get options() {
+    return this.group.get('options') as FormArray;
   }
 
 }

@@ -57,7 +57,7 @@ export class AppComponent implements OnInit {
         }
       }
       if (i.type === 'checkboxes') {
-        form[i.control] = this.fb.array(i.checkboxes.map((option) => {
+        form[i.control] = this.fb.array(i.options.map((option) => {
             return this.fb.group({
               value: option.value,
               label: option.label,

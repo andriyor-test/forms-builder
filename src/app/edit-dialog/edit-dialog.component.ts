@@ -33,15 +33,6 @@ export class EditDialogComponent {
         })
       ));
     }
-    if (data.checkboxes) {
-      this.editForm.addControl('checkboxes', this.fb.array(data.checkboxes.map((option) => {
-          return this.fb.group({
-            value: option.value,
-            label: option.label,
-          });
-        })
-      ));
-    }
     console.log(this.editForm);
   }
 

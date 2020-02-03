@@ -1,9 +1,8 @@
 <mat-form-field [formGroup]="group">
-  <mat-label>Favorite food</mat-label>
+  <mat-label>{{control.title}}</mat-label>
   <mat-select [formControlName]="control.control">
-    <mat-option *ngFor="let food of control.options" [value]="food.value">
-      {{food.label}}
+    <mat-option *ngFor="let option of control.options" [value]="option.value">
+      {{option.label}}
     </mat-option>
   </mat-select>
 </mat-form-field>
-

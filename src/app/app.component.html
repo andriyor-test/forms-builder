@@ -11,9 +11,16 @@
     </button>
   </div>
 
-  <button type="submit" [disabled]="!form.valid" (click)="callingFunction()">
-    Submit
+  <button mat-button (click)="addFormFieldBuilder()">
+    Add option
   </button>
+
+  <div>
+    <button mat-button type="submit" [disabled]="!form.valid" (click)="callingFunction()">
+      Submit
+    </button>
+  </div>
+
   <p>
     Real-time data: {{ form.value | json }}
   </p>
@@ -21,8 +28,4 @@
     Your form status is : {{ form.status }}
   </p>
 </form>
-
-<button mat-button (click)="addFormFieldBuilder()">
-  Add option
-</button>
 

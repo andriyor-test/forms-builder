@@ -21,7 +21,6 @@ export class FormItemComponent implements OnInit {
 
 
   ngOnInit() {
-    console.log(this.control);
     this.onValueChange();
   }
 
