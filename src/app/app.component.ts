@@ -35,6 +35,7 @@ export class AppComponent implements OnInit {
         this.formConfig[index] = result;
         this.formConfig = cloneDeep(this.formConfig);
         this.form = this.fb.group(this.getControl(this.formConfig));
+        this.form.updateValueAndValidity();
       }
     });
   }
@@ -90,6 +91,7 @@ export class AppComponent implements OnInit {
       }];
     this.formConfig = cloneDeep(this.formConfig);
     this.form = this.fb.group(this.getControl(this.formConfig));
+    this.form.updateValueAndValidity();
   }
 
   onDeleteItem(index) {

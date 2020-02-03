@@ -15,23 +15,11 @@ export const inputTypes = [
     title: 'Text',
     value: 'text',
     options: [
-      {title: 'Contains'},
-      {title: 'Doesn\'t contain'},
       {title: 'Email address', validator: 'email'},
-      {title: 'URL'},
-    ]
-  },
-  {
-    title: 'Length',
-    value: 'length',
-    options: [
       {title: 'Maximum character count', validator: 'maxLength'},
       {title: 'Minimum character count', validator: 'minLength'},
+      {title: 'Regular expression', validator: 'regexp'},
     ]
-  },
-  {
-    title: 'Regular expression',
-    value: 'regexp'
   },
 ];
 
@@ -45,6 +33,8 @@ export const config: Config[] = [
     inputType: 'text',
     validation: {
       required: true,
+      maxLength: 160,
+      minLength: 15,
     }
   },
   {

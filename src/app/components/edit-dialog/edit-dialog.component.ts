@@ -1,7 +1,8 @@
 import {Component, Inject} from '@angular/core';
 import {MatDialogRef} from '@angular/material';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormArray, FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {validators} from '../../constants/constants';
 
 @Component({
   selector: 'app-edit-dialog',
@@ -10,6 +11,7 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 })
 export class EditDialogComponent {
   editForm: FormGroup;
+  validators = validators;
 
   constructor(
     public dialogRef: MatDialogRef<EditDialogComponent>,
@@ -20,10 +22,15 @@ export class EditDialogComponent {
       control: [data.control],
       title: [data.title],
       type: [data.type],
-      validation:   this.fb.group({
-        required: [data.validation.required],
-      })
+      inputType: [data.inputType],
+      validation:   this.fb.group({}),
     });
+    for (const j in data.validation) {
+      if (data.validation.hasOwnProperty(j)) {
+        console.log(j, data.validation[j]);
+        this.validation.addControl(j,  new FormControl(data.validation[j]));
+      }
+    }
     if (data.options) {
       this.editForm.addControl('options', this.fb.array(data.options.map((option) => {
           return this.fb.group({
@@ -34,6 +41,10 @@ export class EditDialogComponent {
       ));
     }
     console.log(this.editForm);
+  }
+
+  get validation() {
+    return this.editForm.get('validation') as FormGroup;
   }
 
   cancel(): void {

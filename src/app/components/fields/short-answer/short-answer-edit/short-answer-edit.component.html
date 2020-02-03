@@ -1,26 +1,34 @@
-<div>
+<form [formGroup]="form">
   <mat-form-field class="types">
     <mat-label>Input field type</mat-label>
-    <mat-select [(value)]="selectedInputType" (valueChange)="onValueChange()">
-      <mat-option *ngFor="let inputType of availableInputTypes" [value]="inputType" >
+    <mat-select formControlName="inputType" (ngModelChange)="onValueChange()">
+      <mat-option *ngFor="let inputType of availableInputTypes" [value]="inputType.value" >
         {{inputType.title}}
       </mat-option>
     </mat-select>
   </mat-form-field>
 
-  <mat-form-field class="types">
-    <mat-label>Validator type</mat-label>
-    <mat-select [(value)]="selectedOption">
-      <mat-option *ngFor="let option of selectedInputType?.options" [value]="option.validator" >
-        {{option.title}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+  <div [formGroup]="validation" *ngFor="let control of availableValidationControl">
 
-  <mat-form-field>
-    <input matInput
-           [type]="control.inputType ? control.inputType : 'text'"
-           [value]="value"
-    >
-  </mat-form-field>
-</div>
+    <mat-form-field class="types" >
+      <mat-label>Validator type</mat-label>
+      <mat-select [(value)]="control">
+        <mat-option *ngFor="let option of selectedInputType?.options" [value]="option.validator" >
+          {{option.title}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput
+             [type]="control.inputType ? control.inputType : 'text'"
+             [formControlName]="control"
+      >
+    </mat-form-field>
+
+    <button mat-button (click)="onRemoveValidator(control)">
+      Remove Validator
+    </button>
+  </div>
+
+</form>
