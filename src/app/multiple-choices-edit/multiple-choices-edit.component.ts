@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {FormArray} from '@angular/forms';
+import {FormArray, FormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-multiple-choices-edit',
@@ -10,8 +10,17 @@ export class MultipleChoicesEditComponent {
   @Input() control;
   @Input() form;
 
+  constructor(private fb: FormBuilder) {}
+
   get options() {
     return this.form.get('options') as FormArray;
+  }
+
+  onAddRadio() {
+    this.options.push(this.fb.group({
+      value: '',
+      label: '',
+    }));
   }
 
 }
