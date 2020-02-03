@@ -1,0 +1,44 @@
+<mat-accordion class="card">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{formItem.title}}
+      </mat-panel-title>
+      <mat-panel-description>
+        {{formItem.description}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <form [formGroup]="form">
+      <div *ngFor="let configItem of formConfig; let i = index">
+        <app-dynamic-control [control]="configItem" [group]="form">
+        </app-dynamic-control>
+
+        <button mat-button (click)="openDialog(configItem)">
+          Edit
+        </button>
+        <button mat-button (click)="onDeleteItem(i)">
+          Delete
+        </button>
+      </div>
+
+      <button mat-button (click)="addFormFieldBuilder()">
+        Add option
+      </button>
+
+      <div>
+        <button mat-button type="submit" [disabled]="!form.valid" (click)="callingFunction()">
+          Submit
+        </button>
+      </div>
+
+      <p>
+        Real-time data: {{ form.value | json }}
+      </p>
+      <p>
+        Your form status is : {{ form.status }}
+      </p>
+    </form>
+
+  </mat-expansion-panel>
+</mat-accordion>

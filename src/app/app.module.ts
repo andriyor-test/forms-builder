@@ -37,6 +37,8 @@ import { DropdownEditComponent } from './components/fields/drop-down/dropdown-ed
 import { MultipleChoicesEditComponent } from './components/fields/multiple-choices/multiple-choices-edit/multiple-choices-edit.component';
 import { CheckboxesEditComponent } from './components/fields/checkboxes/checkboxes-edit/checkboxes-edit.component';
 import { FileUploadEditComponent } from './components/fields/file-upload/file-upload-edit/file-upload-edit.component';
+import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -61,6 +63,7 @@ import { FileUploadEditComponent } from './components/fields/file-upload/file-up
     MultipleChoicesEditComponent,
     CheckboxesEditComponent,
     FileUploadEditComponent,
+    DynamicFormComponent,
   ],
   entryComponents: [
     ShortAnswerViewComponent,
@@ -96,7 +99,8 @@ import { FileUploadEditComponent } from './components/fields/file-upload/file-up
     ReactiveFormsModule,
     FormsModule,
     MatDialogModule,
-    MatRadioModule
+    MatRadioModule,
+    MatExpansionModule
   ],
   providers: [
     MatDatepickerModule

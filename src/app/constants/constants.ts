@@ -23,7 +23,7 @@ export const inputTypes = [
   },
 ];
 
-export const config: Config[] = [
+const form1Fields: Config[] = [
   {
     id: 1,
     value: 'default text',
@@ -96,6 +96,9 @@ export const config: Config[] = [
       required: true,
     }
   },
+];
+
+const form2Fields: Config[] = [
   {
     id: 6,
     control: 'dropdown',
@@ -142,6 +145,11 @@ export const config: Config[] = [
       required: true,
     }
   }
+];
+
+export const forms = [
+  {title: 'Form1 title', description: 'Form2 description', fields: form1Fields},
+  {title: 'Form2 title', description: 'Form2 description', fields: form2Fields},
 ];
 
 export const validators = {
