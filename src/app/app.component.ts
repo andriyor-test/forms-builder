@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, FormControl} from '@angular/forms';
 import {MatDialog} from '@angular/material/dialog';
-import {EditDialogComponent} from './edit-dialog/edit-dialog.component';
+import {EditDialogComponent} from './components/edit-dialog/edit-dialog.component';
 import cloneDeep from 'lodash/cloneDeep';
 import {Config} from './models/config.types';
 import {config, validators} from './constants/constants';

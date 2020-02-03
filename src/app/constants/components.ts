@@ -1,29 +1,29 @@
 import {AnswerType} from '../models/answer-types.types';
-import {ShortAnswerComponent} from '../short-answer/short-answer.component';
-import {ParagraphComponent} from '../paragraph/paragraph.component';
-import {DateComponent} from '../date/date.component';
-import {TimeComponent} from '../time/time.component';
-import {FileUploadComponent} from '../file-upload/file-upload.component';
-import {CheckboxesComponent} from '../checkboxes/checkboxes.component';
-import {MultipleChoicesComponent} from '../multiple-choices/multiple-choices.component';
-import {DropDownComponent} from '../drop-down/drop-down.component';
-import {ShortAnswerEditComponent} from '../short-answer-edit/short-answer-edit.component';
-import {ParagraphEditComponent} from '../paragraph-edit/paragraph-edit.component';
-import {DateEditComponent} from '../date-edit/date-edit.component';
-import {TimeEditComponent} from '../time-edit/time-edit.component';
-import {DropdownEditComponent} from '../dropdown-edit/dropdown-edit.component';
-import {MultipleChoicesEditComponent} from '../multiple-choices-edit/multiple-choices-edit.component';
-import {CheckboxesEditComponent} from '../checkboxes-edit/checkboxes-edit.component';
+import {ShortAnswerViewComponent} from '../components/fields/short-answer/short-answer-view/short-answer-view.component';
+import {ParagraphViewComponent} from '../components/fields/paragraph/paragraph-view/paragraph-view.component';
+import {DateViewComponent} from '../components/fields/date/date-view/date-view.component';
+import {TimeViewComponent} from '../components/fields/time/time-view/time-view.component';
+import {FileUploadComponent} from '../components/fields/file-upload/file-upload.component';
+import {CheckboxesViewComponent} from '../components/fields/checkboxes/checkboxes-view/checkboxes-view.component';
+import {MultipleChoicesViewComponent} from '../components/fields/multiple-choices/multiple-choices-view/multiple-choices-view.component';
+import {DropDownViewComponent} from '../components/fields/drop-down/drop-down-view/drop-down-view.component';
+import {ShortAnswerEditComponent} from '../components/fields/short-answer/short-answer-edit/short-answer-edit.component';
+import {ParagraphEditComponent} from '../components/fields/paragraph/paragraph-edit/paragraph-edit.component';
+import {DateEditComponent} from '../components/fields/date/date-edit/date-edit.component';
+import {TimeEditComponent} from '../components/fields/time/time-edit/time-edit.component';
+import {DropdownEditComponent} from '../components/fields/drop-down/dropdown-edit/dropdown-edit.component';
+import {MultipleChoicesEditComponent} from '../components/fields/multiple-choices/multiple-choices-edit/multiple-choices-edit.component';
+import {CheckboxesEditComponent} from '../components/fields/checkboxes/checkboxes-edit/checkboxes-edit.component';
 
 export const types: AnswerType[] = [
-  {title: 'Short answer', component: ShortAnswerComponent, value: 'short' },
-  {title: 'Paragraph', component: ParagraphComponent, value: 'paragraph'},
-  {title: 'Date', component: DateComponent, value: 'date'},
-  {title: 'Time', component: TimeComponent, value: 'time'},
+  {title: 'Short answer', component: ShortAnswerViewComponent, value: 'short' },
+  {title: 'Paragraph', component: ParagraphViewComponent, value: 'paragraph'},
+  {title: 'Date', component: DateViewComponent, value: 'date'},
+  {title: 'Time', component: TimeViewComponent, value: 'time'},
   {title: 'File upload', component: FileUploadComponent, value: 'file-upload'},
-  {title: 'Checkboxes', component: CheckboxesComponent, value: 'checkboxes'},
-  {title: 'Multiple choices', component: MultipleChoicesComponent, value: 'multiple-choices'},
-  {title: 'Dropdown', component: DropDownComponent, value: 'dropdown'},
+  {title: 'Checkboxes', component: CheckboxesViewComponent, value: 'checkboxes'},
+  {title: 'Multiple choices', component: MultipleChoicesViewComponent, value: 'multiple-choices'},
+  {title: 'Dropdown', component: DropDownViewComponent, value: 'dropdown'},
 ];
 
 export const edit: AnswerType[] = [
