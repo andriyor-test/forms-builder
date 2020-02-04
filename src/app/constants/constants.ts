@@ -1,6 +1,6 @@
 import {Validators} from '@angular/forms';
 
-import {Config} from '../models/config.types';
+import {Field} from '../models/config.types';
 
 export const inputTypes = [
   {
@@ -23,7 +23,7 @@ export const inputTypes = [
   },
 ];
 
-const form1Fields: Config[] = [
+const form1Fields: Field[] = [
   {
     id: 1,
     value: 'default text',
@@ -98,7 +98,7 @@ const form1Fields: Config[] = [
   },
 ];
 
-const form2Fields: Config[] = [
+const form2Fields: Field[] = [
   {
     id: 6,
     control: 'dropdown',

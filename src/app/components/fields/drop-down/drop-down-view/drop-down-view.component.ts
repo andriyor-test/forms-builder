@@ -1,4 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {FormGroup} from '@angular/forms';
+import {Field} from '../../../../models/config.types';
 
 @Component({
   selector: 'app-drop-down',
@@ -6,8 +8,8 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./drop-down-view.component.css']
 })
 export class DropDownViewComponent implements OnInit {
-  @Input() control;
-  @Input() group;
+  @Input() field: Field;
+  @Input() formGroup: FormGroup;
 
   constructor() { }
 

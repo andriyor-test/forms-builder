@@ -1,8 +1,10 @@
 import {Component, ComponentFactoryResolver, Input, OnInit, ViewChild} from '@angular/core';
+import {FormGroup} from '@angular/forms';
 
 import {components} from '../../constants/components';
 import {ComponentType} from '../../models/answer-types.types';
 import {AnswerDirective} from '../../answer.directive';
+import {Field} from '../../models/config.types';
 
 @Component({
   selector: 'app-form-item',
@@ -11,8 +13,8 @@ import {AnswerDirective} from '../../answer.directive';
 })
 export class FormItemComponent implements OnInit {
   types: ComponentType[] = components;
-  @Input() control;
-  @Input() form;
+  @Input() field: Field;
+  @Input() form: FormGroup;
   @ViewChild(AnswerDirective, {static: true}) adHost: AnswerDirective;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver) {}
@@ -22,14 +24,14 @@ export class FormItemComponent implements OnInit {
   }
 
   onValueChange() {
-    const selectedAnswerTypeIndex = this.types.findIndex(t => t.value === this.control.type );
+    const selectedAnswerTypeIndex = this.types.findIndex(t => t.value === this.field.type );
     const answerItem = this.types[selectedAnswerTypeIndex];
 
     const componentFactory = this.componentFactoryResolver.resolveComponentFactory(answerItem.editComponent);
     const viewContainerRef = this.adHost.viewContainerRef;
     viewContainerRef.clear();
     const componentRef = viewContainerRef.createComponent(componentFactory);
-    componentRef.instance.control = this.control;
+    componentRef.instance.control = this.field;
     componentRef.instance.form = this.form;
   }
 }

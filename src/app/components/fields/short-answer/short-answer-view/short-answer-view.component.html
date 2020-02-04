@@ -1,24 +1,24 @@
-<mat-form-field class="example-full-width" [formGroup]="group">
-  <input matInput [placeholder]="control.title"
-         [type]="control.inputType ? control.inputType : 'text'"
-         [formControlName]="control.control"
+<mat-form-field class="example-full-width" [formGroup]="formGroup">
+  <input matInput [placeholder]="field.title"
+         [type]="field.inputType ? field.inputType : 'text'"
+         [formControlName]="field.control"
   >
-  <mat-error *ngIf="group.controls[control.control].hasError('email') && !group.controls[control.control].hasError('required')">
+  <mat-error *ngIf="formGroup.controls[field.control].hasError('email') && !formGroup.controls[field.control].hasError('required')">
     Please enter a valid email address
   </mat-error>
-  <mat-error *ngIf="group.controls[control.control].hasError('required')">
+  <mat-error *ngIf="formGroup.controls[field.control].hasError('required')">
     Is <strong>required</strong> field
   </mat-error>
-  <mat-error *ngIf="group.controls[control.control].hasError('minlength') && !group.controls[control.control].hasError('required')">
+  <mat-error *ngIf="formGroup.controls[field.control].hasError('minlength') && !formGroup.controls[field.control].hasError('required')">
     min Length
   </mat-error>
-  <mat-error *ngIf="group.controls[control.control].hasError('maxlength') && !group.controls[control.control].hasError('required')">
+  <mat-error *ngIf="formGroup.controls[field.control].hasError('maxlength') && !formGroup.controls[field.control].hasError('required')">
     max Length
   </mat-error>
-  <mat-error *ngIf="group.controls[control.control].hasError('max') && !group.controls[control.control].hasError('required')">
+  <mat-error *ngIf="formGroup.controls[field.control].hasError('max') && !formGroup.controls[field.control].hasError('required')">
     max
   </mat-error>
-  <mat-error *ngIf="group.controls[control.control].hasError('min') && !group.controls[control.control].hasError('required')">
+  <mat-error *ngIf="formGroup.controls[field.control].hasError('min') && !formGroup.controls[field.control].hasError('required')">
     max
   </mat-error>
 </mat-form-field>

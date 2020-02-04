@@ -2,7 +2,7 @@
   <form class="example-form">
     <mat-form-field class="types">
       <mat-label>Field type</mat-label>
-      <mat-select [(value)]="control.type" (valueChange)="onValueChange()">
+      <mat-select [(value)]="field.type" (valueChange)="onValueChange()">
         <mat-option *ngFor="let type of types" [value]="type.value" >
           {{type.title}}
         </mat-option>

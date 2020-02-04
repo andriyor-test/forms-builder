@@ -3,6 +3,8 @@ import {Component, ComponentFactoryResolver, Input, OnInit, ViewChild} from '@an
 import {AnswerDirective} from '../../answer.directive';
 import {ComponentType} from '../../models/answer-types.types';
 import {components} from '../../constants/components';
+import {Field} from '../../models/config.types';
+import {FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-dynamic-control',
@@ -10,23 +12,27 @@ import {components} from '../../constants/components';
   styleUrls: ['./dynamic-control.component.css']
 })
 export class DynamicControlComponent implements OnInit {
-  @Input() control;
-  @Input() group;
+  @Input() field: Field;
+  @Input() formGroup: FormGroup;
   types: ComponentType[] = components;
   @ViewChild(AnswerDirective, {static: true}) adHost: AnswerDirective;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver) { }
 
   ngOnInit() {
-    const selectedAnswerTypeIndex = this.types.findIndex(t => t.value === this.control.type );
+    this.onValueChange();
+  }
+
+  onValueChange() {
+    const selectedAnswerTypeIndex = this.types.findIndex(t => t.value === this.field.type );
     const answerItem = this.types[selectedAnswerTypeIndex];
 
     const componentFactory = this.componentFactoryResolver.resolveComponentFactory(answerItem.viewComponent);
     const viewContainerRef = this.adHost.viewContainerRef;
     viewContainerRef.clear();
     const componentRef = viewContainerRef.createComponent(componentFactory);
-    componentRef.instance.control = this.control;
-    componentRef.instance.group = this.group;
+    componentRef.instance.field = this.field;
+    componentRef.instance.formGroup = this.formGroup;
   }
 
 }

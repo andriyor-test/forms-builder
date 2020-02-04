@@ -1,4 +1,4 @@
-export interface Config {
+export interface Field {
   id: number;
   control: string;
   title: string;
@@ -7,6 +7,12 @@ export interface Config {
   inputType?: string;
   validation?: Validation;
   options?: Option[];
+}
+
+export interface FormItem {
+  title: string;
+  description: string;
+  fields: Field[];
 }
 
 interface Validation {

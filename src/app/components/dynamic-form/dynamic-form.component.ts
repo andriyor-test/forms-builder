@@ -4,6 +4,7 @@ import {MatDialog} from '@angular/material/dialog';
 import {EditDialogComponent} from '../edit-dialog/edit-dialog.component';
 import cloneDeep from 'lodash/cloneDeep';
 import {validators} from '../../constants/constants';
+import {FormItem} from '../../models/config.types';
 
 @Component({
   selector: 'app-dynamic-form',
@@ -12,7 +13,7 @@ import {validators} from '../../constants/constants';
 })
 export class DynamicFormComponent implements OnInit {
   form: FormGroup;
-  @Input() formItem;
+  @Input() formItem: FormItem;
   formConfig;
   validators = validators;
 
@@ -29,10 +30,10 @@ export class DynamicFormComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         console.log(result);
-        const index = this.formConfig.findIndex(i => i.id === result.id);
-        this.formConfig[index] = result;
-        this.formConfig = cloneDeep(this.formConfig);
-        this.form = this.fb.group(this.getControl(this.formConfig));
+        const index = this.formItem.fields.findIndex(i => i.id === result.id);
+        this.formItem.fields[index] = result;
+        this.formItem = cloneDeep(this.formItem);
+        this.form = this.fb.group(this.getControl(this.formItem));
         this.form.updateValueAndValidity();
       }
     });
@@ -94,7 +95,7 @@ export class DynamicFormComponent implements OnInit {
       ...this.formConfig,
       {
         id: 20,
-        control: 'email',
+        field: 'email',
         title: 'EMail',
         type: 'short',
         validation: {
@@ -109,9 +110,9 @@ export class DynamicFormComponent implements OnInit {
 
 
   onDeleteItem(index) {
-    this.formConfig.splice(index, 1);
-    this.formConfig = cloneDeep(this.formConfig);
-    this.form = this.fb.group(this.getControl(this.formConfig));
+    this.formItem.fields.splice(index, 1);
+    this.formItem = cloneDeep(this.formItem);
+    this.form = this.fb.group(this.getControl(this.formItem));
   }
 
 }

@@ -1,7 +1,7 @@
 import {Component, Inject} from '@angular/core';
 import {MatDialogRef} from '@angular/material';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
-import {FormArray, FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {validators} from '../../constants/constants';
 
 @Component({

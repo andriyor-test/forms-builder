@@ -1,6 +1,6 @@
-<ng-container [formGroup]="group">
-  <mat-radio-group class="radio-group" aria-label="Select an option" [formControlName]="control.control">
-    <mat-radio-button class="radio-button" *ngFor="let option of control.options" [value]="option.value">
+<ng-container [formGroup]="formGroup">
+  <mat-radio-group class="radio-group" aria-label="Select an option" [formControlName]="field.control">
+    <mat-radio-button class="radio-button" *ngFor="let option of field.options" [value]="option.value">
       {{option.label}}
     </mat-radio-button>
   </mat-radio-group>
