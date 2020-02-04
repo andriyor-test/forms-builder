@@ -14,7 +14,7 @@ import {Field} from '../../models/config.types';
 export class FormItemComponent implements OnInit {
   types: ComponentType[] = components;
   @Input() field: Field;
-  @Input() form: FormGroup;
+  @Input() formGroup: FormGroup;
   @ViewChild(AnswerDirective, {static: true}) adHost: AnswerDirective;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver) {}
@@ -31,7 +31,7 @@ export class FormItemComponent implements OnInit {
     const viewContainerRef = this.adHost.viewContainerRef;
     viewContainerRef.clear();
     const componentRef = viewContainerRef.createComponent(componentFactory);
-    componentRef.instance.control = this.field;
-    componentRef.instance.form = this.form;
+    componentRef.instance.field = this.field;
+    componentRef.instance.formGroup = this.formGroup;
   }
 }

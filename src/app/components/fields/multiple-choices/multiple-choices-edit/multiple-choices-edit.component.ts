@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
-import {FormArray, FormBuilder} from '@angular/forms';
+import {FormArray, FormBuilder, FormGroup} from '@angular/forms';
+import {Field} from '../../../../models/config.types';
 
 @Component({
   selector: 'app-multiple-choices-edit',
@@ -7,13 +8,13 @@ import {FormArray, FormBuilder} from '@angular/forms';
   styleUrls: ['./multiple-choices-edit.component.css']
 })
 export class MultipleChoicesEditComponent {
-  @Input() control;
-  @Input() form;
+  @Input() field: Field;
+  @Input() formGroup: FormGroup;
 
   constructor(private fb: FormBuilder) {}
 
   get options() {
-    return this.form.get('options') as FormArray;
+    return this.formGroup.get('options') as FormArray;
   }
 
   onAddRadio() {

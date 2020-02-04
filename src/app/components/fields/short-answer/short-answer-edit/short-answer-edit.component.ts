@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {inputTypes} from '../../../../constants/constants';
 import {FormArray, FormControl, FormGroup} from '@angular/forms';
+import {Field} from '../../../../models/config.types';
 
 @Component({
   selector: 'app-short-answer-edit',
@@ -9,34 +10,33 @@ import {FormArray, FormControl, FormGroup} from '@angular/forms';
 })
 export class ShortAnswerEditComponent implements OnInit {
   selectedInputType;
-  selected;
   availableInputTypes = inputTypes;
-  @Input() control;
-  @Input() form;
+  @Input() field: Field;
+  @Input() formGroup: FormGroup;
   availableValidationControl;
 
   constructor() { }
 
   ngOnInit() {
     this.availableValidationControl = Object.keys(this.validation.controls);
-    this.selectedInputType = this.availableInputTypes.find(type => type.value === this.control.inputType);
-    if (this.control.inputType === 'email') {
+    this.selectedInputType = this.availableInputTypes.find(type => type.value === this.field.inputType);
+    if (this.field.inputType === 'email') {
       this.selectedInputType = this.availableInputTypes[1];
-      this.form.controls.inputType.setValue('text');
+      this.formGroup.controls.inputType.setValue('text');
     }
   }
 
   get inputType() {
-    return this.form.get('inputType') as FormControl;
+    return this.formGroup.get('inputType') as FormControl;
   }
 
   get validation() {
-    return this.form.get('validation') as FormGroup;
+    return this.formGroup.get('validation') as FormGroup;
   }
 
   onValueChange() {
     this.selectedInputType = this.availableInputTypes.find(type => type.value === this.inputType.value);
-    if (this.control.inputType === 'email') {
+    if (this.field.inputType === 'email') {
       this.selectedInputType = this.availableInputTypes[1];
     }
     for (const c of this.availableValidationControl) {
