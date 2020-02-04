@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {inputTypes} from '../../../../constants/constants';
-import {FormArray, FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup} from '@angular/forms';
 import {Field} from '../../../../models/config.types';
 
 @Component({
@@ -46,7 +46,6 @@ export class ShortAnswerEditComponent implements OnInit {
   }
 
   onRemoveValidator(validator) {
-    console.log(validator);
     this.validation.removeControl(validator);
     this.availableValidationControl = this.availableValidationControl.filter(c => c !== validator);
   }
@@ -62,8 +61,6 @@ export class ShortAnswerEditComponent implements OnInit {
   }
 
   onValidatorTypeChange(value, i) {
-    console.log(value, i);
-    console.log(this.availableValidationControl[i]);
     this.validation.removeControl(this.availableValidationControl[i]);
     this.availableValidationControl.splice(i, 1);
     if (value === 'email') {

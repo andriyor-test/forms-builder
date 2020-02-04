@@ -12,9 +12,9 @@ import {FormGroup} from '@angular/forms';
   styleUrls: ['./dynamic-control.component.css']
 })
 export class DynamicControlComponent implements OnInit {
+  types: ComponentType[] = components;
   @Input() field: Field;
   @Input() formGroup: FormGroup;
-  types: ComponentType[] = components;
   @ViewChild(AnswerDirective, {static: true}) adHost: AnswerDirective;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver) { }

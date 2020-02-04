@@ -10,6 +10,7 @@ export interface Field {
 }
 
 export interface FormItem {
+  id: number;
   title: string;
   description: string;
   fields: Field[];

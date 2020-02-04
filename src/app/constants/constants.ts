@@ -1,6 +1,6 @@
 import {Validators} from '@angular/forms';
 
-import {Field} from '../models/config.types';
+import {Field, FormItem} from '../models/config.types';
 
 export const inputTypes = [
   {
@@ -147,9 +147,9 @@ const form2Fields: Field[] = [
   }
 ];
 
-export const forms = [
-  {title: 'Form1 title', description: 'Form2 description', fields: form1Fields},
-  {title: 'Form2 title', description: 'Form2 description', fields: form2Fields},
+export const forms: FormItem[] = [
+  {id: 1, title: 'Form1 title', description: 'Form1 description', fields: form1Fields},
+  {id: 2, title: 'Form2 title', description: 'Form2 description', fields: form2Fields},
 ];
 
 export const validators = {

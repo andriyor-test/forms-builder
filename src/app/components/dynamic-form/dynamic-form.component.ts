@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {MatDialog} from '@angular/material/dialog';
 import {EditDialogComponent} from '../edit-dialog/edit-dialog.component';
@@ -14,6 +14,7 @@ import {FormItem} from '../../models/config.types';
 export class DynamicFormComponent implements OnInit {
   form: FormGroup;
   @Input() formItem: FormItem;
+  @Output() updateForm = new EventEmitter();
   formConfig;
   validators = validators;
 
@@ -25,11 +26,9 @@ export class DynamicFormComponent implements OnInit {
       width: '95%',
       data: configItem,
     });
-    console.log(this.formConfig);
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        console.log(result);
         const index = this.formItem.fields.findIndex(i => i.id === result.id);
         this.formItem.fields[index] = result;
         this.formItem = cloneDeep(this.formItem);
@@ -42,7 +41,6 @@ export class DynamicFormComponent implements OnInit {
   ngOnInit() {
     this.formConfig = this.formItem.fields;
     this.form = this.fb.group(this.getControl(this.formItem));
-    console.log(this.form);
   }
 
   get title() {
@@ -87,24 +85,24 @@ export class DynamicFormComponent implements OnInit {
   }
 
   callingFunction() {
-    console.log(this.form.value);
   }
 
   addFormFieldBuilder() {
-    this.formConfig = [
-      ...this.formConfig,
+    this.formItem.fields = [
+      ...this.formItem.fields,
       {
-        id: 20,
-        field: 'email',
+        id: 22,
+        control: 'paragraph2',
         title: 'EMail',
-        type: 'short',
+        type: 'paragraph',
         validation: {
           email: true,
           required: true,
         }
       }];
-    this.formConfig = cloneDeep(this.formConfig);
-    this.form = this.fb.group(this.getControl(this.formConfig));
+    this.formItem = cloneDeep(this.formItem);
+    this.updateForm.emit(this.formItem);
+    this.form = this.fb.group(this.getControl(this.formItem));
     this.form.updateValueAndValidity();
   }
 

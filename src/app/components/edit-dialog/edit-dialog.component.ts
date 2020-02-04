@@ -27,7 +27,6 @@ export class EditDialogComponent {
     });
     for (const j in data.validation) {
       if (data.validation.hasOwnProperty(j)) {
-        console.log(j, data.validation[j]);
         this.validation.addControl(j,  new FormControl(data.validation[j]));
       }
     }
@@ -40,7 +39,6 @@ export class EditDialogComponent {
         })
       ));
     }
-    console.log(this.editForm);
   }
 
   get validation() {
@@ -52,7 +50,6 @@ export class EditDialogComponent {
   }
 
   onApply() {
-    console.log(this.data);
     this.editForm.controls.type.setValue(this.data.type);
     this.dialogRef.close(this.editForm.value);
   }
