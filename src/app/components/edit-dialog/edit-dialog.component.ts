@@ -2,7 +2,6 @@ import { Component, Inject } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { validators } from '../../constants/constants';
 
 @Component({
   selector: 'app-edit-dialog',
@@ -11,7 +10,6 @@ import { validators } from '../../constants/constants';
 })
 export class EditDialogComponent {
   editForm: FormGroup;
-  validators = validators;
 
   constructor(
     public dialogRef: MatDialogRef<EditDialogComponent>,

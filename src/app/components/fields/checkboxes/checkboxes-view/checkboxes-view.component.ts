@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormArray, FormGroup } from '@angular/forms';
 import { Field } from '../../../../models/config.types';
 
@@ -7,14 +7,9 @@ import { Field } from '../../../../models/config.types';
   templateUrl: './checkboxes-view.component.html',
   styleUrls: ['./checkboxes-view.component.css']
 })
-export class CheckboxesViewComponent implements OnInit {
+export class CheckboxesViewComponent {
   @Input() field: Field;
   @Input() formGroup: FormGroup;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 
   get options() {
     return this.formGroup.get('options') as FormArray;

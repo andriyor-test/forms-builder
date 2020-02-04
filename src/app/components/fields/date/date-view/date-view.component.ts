@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Field } from '../../../../models/config.types';
 
@@ -7,13 +7,7 @@ import { Field } from '../../../../models/config.types';
   templateUrl: './date-view.component.html',
   styleUrls: ['./date-view.component.css']
 })
-export class DateViewComponent implements OnInit {
+export class DateViewComponent {
   @Input() field: Field;
   @Input() formGroup: FormGroup;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 }

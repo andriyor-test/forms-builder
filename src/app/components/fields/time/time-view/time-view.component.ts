@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Field } from '../../../../models/config.types';
 
@@ -7,13 +7,7 @@ import { Field } from '../../../../models/config.types';
   templateUrl: './time-view.component.html',
   styleUrls: ['./time-view.component.css']
 })
-export class TimeViewComponent implements OnInit {
+export class TimeViewComponent {
   @Input() field: Field;
   @Input() formGroup: FormGroup;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 }

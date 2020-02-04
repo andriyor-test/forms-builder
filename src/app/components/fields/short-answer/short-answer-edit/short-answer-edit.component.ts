@@ -15,8 +15,6 @@ export class ShortAnswerEditComponent implements OnInit {
   @Input() formGroup: FormGroup;
   availableValidationControl;
 
-  constructor() { }
-
   ngOnInit() {
     this.availableValidationControl = Object.keys(this.validation.controls);
     this.selectedInputType = this.availableInputTypes.find(type => type.value === this.field.inputType);
@@ -52,11 +50,13 @@ export class ShortAnswerEditComponent implements OnInit {
 
   onAddValidator() {
     if (this.inputType.value === 'text') {
-      this.availableValidationControl.push('maxLength');
-      this.validation.addControl('maxLength',  new FormControl(''));
+      const textDefault = 'maxLength';
+      this.availableValidationControl.push(textDefault);
+      this.validation.addControl(textDefault,  new FormControl(''));
     } else if (this.inputType.value === 'number') {
-      this.availableValidationControl.push('max');
-      this.validation.addControl('max',  new FormControl(''));
+      const numberDefault = 'max';
+      this.availableValidationControl.push(numberDefault);
+      this.validation.addControl(numberDefault,  new FormControl(''));
     }
   }
 
@@ -64,7 +64,7 @@ export class ShortAnswerEditComponent implements OnInit {
     this.validation.removeControl(this.availableValidationControl[i]);
     this.availableValidationControl.splice(i, 1);
     if (value === 'email') {
-      this.validation.addControl('email',  new FormControl(true));
+      this.validation.addControl(value,  new FormControl(true));
     } else {
       this.validation.addControl(value,  new FormControl(''));
     }

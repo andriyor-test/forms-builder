@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Field } from '../../../../models/config.types';
 
@@ -7,13 +7,8 @@ import { Field } from '../../../../models/config.types';
   templateUrl: './multiple-choices-view.component.html',
   styleUrls: ['./multiple-choices-view.component.css']
 })
-export class MultipleChoicesViewComponent implements OnInit {
+export class MultipleChoicesViewComponent {
   @Input() field: Field;
   @Input() formGroup: FormGroup;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 
 }
