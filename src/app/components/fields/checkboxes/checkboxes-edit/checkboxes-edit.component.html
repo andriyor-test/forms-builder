@@ -2,7 +2,7 @@
   <ng-container formArrayName="options">
     <ng-container *ngFor="let _ of options.controls; let i = index">
       <div [formArrayName]="i">
-        <mat-checkbox formControlName="value"></mat-checkbox>
+        <mat-checkbox class="'checkbox" formControlName="value"></mat-checkbox>
 
         <mat-form-field class="example-full-width">
           <input matInput placeholder="Value" formControlName="label" >
