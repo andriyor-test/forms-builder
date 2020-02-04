@@ -2,7 +2,7 @@
   <ng-container formArrayName="options">
     <ng-container *ngFor="let _ of options.controls; let i = index">
       <div [formArrayName]="i">
-        <mat-form-field class="example-full-width">
+        <mat-form-field class="form-field">
           <input matInput placeholder="Label" formControlName="label">
         </mat-form-field>
 
