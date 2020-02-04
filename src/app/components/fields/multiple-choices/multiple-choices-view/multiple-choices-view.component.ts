@@ -1,6 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {FormGroup} from '@angular/forms';
-import {Field} from '../../../../models/config.types';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { Field } from '../../../../models/config.types';
 
 @Component({
   selector: 'app-multiple-choices',

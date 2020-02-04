@@ -1,10 +1,10 @@
-import {Component, ComponentFactoryResolver, Input, OnInit, ViewChild} from '@angular/core';
+import { Component, ComponentFactoryResolver, Input, OnInit, ViewChild } from '@angular/core';
 
-import {AnswerDirective} from '../../answer.directive';
-import {ComponentType} from '../../models/answer-types.types';
-import {components} from '../../constants/components';
-import {Field} from '../../models/config.types';
-import {FormGroup} from '@angular/forms';
+import { AnswerDirective } from '../../answer.directive';
+import { ComponentType } from '../../models/answer-types.types';
+import { components } from '../../constants/components';
+import { Field } from '../../models/config.types';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-dynamic-control',

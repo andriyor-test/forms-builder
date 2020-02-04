@@ -1,7 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {inputTypes} from '../../../../constants/constants';
-import {FormControl, FormGroup} from '@angular/forms';
-import {Field} from '../../../../models/config.types';
+import { Component, Input, OnInit } from '@angular/core';
+import { inputTypes } from '../../../../constants/constants';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Field } from '../../../../models/config.types';
 
 @Component({
   selector: 'app-short-answer-edit',

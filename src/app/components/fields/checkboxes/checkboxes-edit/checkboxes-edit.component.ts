@@ -1,6 +1,6 @@
-import {Component, Input} from '@angular/core';
-import {FormArray, FormBuilder, FormGroup} from '@angular/forms';
-import {Field} from '../../../../models/config.types';
+import { Component, Input } from '@angular/core';
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { Field } from '../../../../models/config.types';
 
 @Component({
   selector: 'app-checkboxes-edit',

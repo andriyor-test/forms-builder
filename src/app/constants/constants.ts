@@ -1,6 +1,6 @@
-import {Validators} from '@angular/forms';
+import { Validators } from '@angular/forms';
 
-import {Field, FormItem} from '../models/config.types';
+import { Field, FormItem } from '../models/config.types';
 
 export const inputTypes = [
   {

@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {forms} from './constants/constants';
+import { Component } from '@angular/core';
+import { forms } from './constants/constants';
 import cloneDeep from 'lodash/cloneDeep';
 
 @Component({
