@@ -40,13 +40,25 @@ export class DynamicFormComponent implements OnInit {
 
   ngOnInit() {
     this.formConfig = this.formItem.fields;
-    this.form = this.fb.group(this.getControl(this.formConfig));
+    this.form = this.fb.group(this.getControl(this.formItem));
     console.log(this.form);
   }
 
+  get title() {
+    return this.form.get('title') as FormControl;
+  }
+
+  get description() {
+    return this.form.get('description') as FormControl;
+  }
+
+
   getControl(formConfig) {
     const form = {};
-    for (const i of formConfig) {
+    form['title'] = formConfig.title;
+    form['description'] = formConfig.description;
+
+    for (const i of formConfig.fields) {
       const fieldValidators = [];
       for (const j in i.validation) {
         if (i.validation.hasOwnProperty(j)) {

@@ -2,15 +2,25 @@
   <mat-expansion-panel>
     <mat-expansion-panel-header>
       <mat-panel-title>
-        {{formItem.title}}
+        {{title.value}}
       </mat-panel-title>
       <mat-panel-description>
-        {{formItem.description}}
+        {{description.value}}
       </mat-panel-description>
     </mat-expansion-panel-header>
 
     <form [formGroup]="form">
-      <div *ngFor="let configItem of formConfig; let i = index">
+      <mat-card class="form-field">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Form title" formControlName="title">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Form description" formControlName="description">
+        </mat-form-field>
+      </mat-card>
+
+      <mat-card *ngFor="let configItem of formConfig; let i = index" class="form-field">
         <app-dynamic-control [control]="configItem" [group]="form">
         </app-dynamic-control>
 
@@ -20,7 +30,7 @@
         <button mat-button (click)="onDeleteItem(i)">
           Delete
         </button>
-      </div>
+      </mat-card>
 
       <button mat-button (click)="addFormFieldBuilder()">
         Add option
