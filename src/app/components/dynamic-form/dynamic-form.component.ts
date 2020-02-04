@@ -31,9 +31,7 @@ export class DynamicFormComponent implements OnInit {
       if (result) {
         const index = this.formItem.fields.findIndex(i => i.id === result.id);
         this.formItem.fields[index] = result;
-        this.formItem = cloneDeep(this.formItem);
-        this.form = this.fb.group(this.getControl(this.formItem));
-        this.form.updateValueAndValidity();
+        this.updateForm.emit(this.formItem);
       }
     });
   }
@@ -100,7 +98,6 @@ export class DynamicFormComponent implements OnInit {
           required: true,
         }
       }];
-    this.formItem = cloneDeep(this.formItem);
     this.updateForm.emit(this.formItem);
     this.form = this.fb.group(this.getControl(this.formItem));
     this.form.updateValueAndValidity();

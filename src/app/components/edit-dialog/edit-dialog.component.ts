@@ -38,6 +38,8 @@ export class EditDialogComponent {
           });
         })
       ));
+    } else {
+      this.editForm.addControl('options', this.fb.array([]));
     }
   }
 
