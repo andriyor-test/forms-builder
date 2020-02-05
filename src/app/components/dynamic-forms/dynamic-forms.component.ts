@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+
+import cloneDeep from 'lodash/cloneDeep';
+
 import { FormService } from '../../services/form.service';
 import { FormItem } from '../../models/form-item.types';
-import cloneDeep from 'lodash/cloneDeep';
 
 @Component({
   selector: 'app-dynamic-forms',

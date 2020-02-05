@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { inputTypes } from '../../../../constants/input-types';
 import { FormControl, FormGroup } from '@angular/forms';
+
+import { inputTypes } from '../../../../constants/input-types';
+
 import { Field } from '../../../../models/form-item.types';
 import { InputType } from '../../../../models/input.types';
 

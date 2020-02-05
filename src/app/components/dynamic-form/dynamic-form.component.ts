@@ -1,8 +1,10 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+
 import { MatDialog } from '@angular/material/dialog';
-import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
 import cloneDeep from 'lodash/cloneDeep';
+
+import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
 import { validatorsTypes } from '../../constants/validators-types';
 import { FormItem } from '../../models/form-item.types';
 
@@ -48,7 +50,6 @@ export class DynamicFormComponent implements OnInit {
   get description() {
     return this.form.get('description') as FormControl;
   }
-
 
   getControl(formConfig) {
     const form = {};

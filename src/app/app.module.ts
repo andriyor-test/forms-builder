@@ -1,9 +1,11 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { MatInputModule } from '@angular/material/input';
+import { BrowserModule } from '@angular/platform-browser';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
-import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -11,12 +13,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatRadioModule } from '@angular/material/radio';
+
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-
-import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { FileUploadModule } from 'ng2-file-upload';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 
-import { AppComponent } from './app.component';
+import { FormService } from './services/form.service';
+
 import { ShortAnswerViewComponent } from './components/fields/short-answer/short-answer-view/short-answer-view.component';
 import { ParagraphViewComponent } from './components/fields/paragraph/paragraph-view/paragraph-view.component';
 import { DateViewComponent } from './components/fields/date/date-view/date-view.component';
@@ -24,7 +27,6 @@ import { TimeViewComponent } from './components/fields/time/time-view/time-view.
 import { FileUploadViewComponent } from './components/fields/file-upload/file-upload-view/file-upload-view.component';
 import { CheckboxesViewComponent } from './components/fields/checkboxes/checkboxes-view/checkboxes-view.component';
 import { MultipleChoicesViewComponent } from './components/fields/multiple-choices/multiple-choices-view/multiple-choices-view.component';
-import { AnswerDirective } from './answer.directive';
 import { DropDownViewComponent } from './components/fields/drop-down/drop-down-view/drop-down-view.component';
 import { FormItemComponent } from './components/form-item/form-item.component';
 import { EditDialogComponent } from './components/edit-dialog/edit-dialog.component';
@@ -38,9 +40,11 @@ import { MultipleChoicesEditComponent } from './components/fields/multiple-choic
 import { CheckboxesEditComponent } from './components/fields/checkboxes/checkboxes-edit/checkboxes-edit.component';
 import { FileUploadEditComponent } from './components/fields/file-upload/file-upload-edit/file-upload-edit.component';
 import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
-import { MatExpansionModule } from '@angular/material/expansion';
 import { DynamicFormsComponent } from './components/dynamic-forms/dynamic-forms.component';
-import { FormService } from './services/form.service';
+
+import { AppComponent } from './app.component';
+import { AnswerDirective } from './answer.directive';
+
 
 @NgModule({
   declarations: [
@@ -112,4 +116,3 @@ import { FormService } from './services/form.service';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-

@@ -1,6 +1,68 @@
 {
-  "extends": "tslint:recommended",
+  "extends": ["tslint:recommended", "tslint-import-group-ordering"],
   "rules": {
+    "import-group-ordering": {
+      "severity": "warning",
+      "options": {
+        "imports-groups": [
+          {
+            "name": "angular"
+          },
+          {
+            "name": "material"
+          },
+          {
+            "name": "dependencies"
+          },
+          {
+            "name": "services"
+          },
+          {
+            "name": "components"
+          },
+          {
+            "name": "other"
+          }
+        ],
+        "matching-rules": [
+          {
+            "type": "components",
+            "matches": ".*components",
+            "imports-group": "components"
+          },
+          {
+            "type": "services",
+            "matches": ".*services",
+            "imports-group": "services"
+          },
+          {
+            "type": "angular",
+            "matches": "^(@angular)",
+            "imports-group": "dependencies",
+            "disable-native-nodejs-modules": true,
+            "from-package.json": true
+          },
+          {
+            "type": "material",
+            "matches": "^(@angular/material)",
+            "imports-group": "dependencies",
+            "disable-native-nodejs-modules": true,
+            "from-package.json": true
+          },
+          {
+            "type": "dependencies",
+            "imports-group": "dependencies",
+            "disable-native-nodejs-modules": true,
+            "from-package.json": true
+          },
+          {
+            "type": "project",
+            "matches": ".*",
+            "imports-group": "other"
+          }
+        ]
+      }
+    },
     "whitespace": [true, "check-module"],
     "array-type": false,
     "arrow-parens": false,
