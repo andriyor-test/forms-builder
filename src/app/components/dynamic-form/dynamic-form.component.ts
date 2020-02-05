@@ -64,8 +64,7 @@ export class DynamicFormComponent implements OnInit {
         if (field.validation.hasOwnProperty(validationKey)) {
           if (field.validation[validationKey] === true) {
             fieldValidators.push(this.validators[validationKey]);
-          } else if (field.validation[validationKey] === false) {
-          } else {
+          } else if (Number(field.validation[validationKey])) {
             fieldValidators.push(this.validators[validationKey](field.validation[validationKey]));
           }
         }

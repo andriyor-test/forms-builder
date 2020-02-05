@@ -20,7 +20,7 @@
       </mat-select>
     </mat-form-field>
 
-      <ng-container *ngIf="control != 'email'">
+      <ng-container *ngIf="control !== 'email'">
         <mat-form-field>
           <input matInput
                  [type]="control.inputType ? control.inputType : 'text'"
