@@ -1,8 +1,7 @@
 <ng-container *ngFor="let form of forms; let i = index">
   <app-dynamic-form
     [formItem]="form"
-    (updateForm)="onFormUpdate($event, i)"
-  >
+    (updateForm)="onFormUpdate($event, i)">
   </app-dynamic-form>
 </ng-container>
 
