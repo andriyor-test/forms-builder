@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { inputTypes } from '../../../../constants/constants';
+import { inputTypes } from '../../../../constants/input-types';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Field } from '../../../../models/config.types';
+import { Field } from '../../../../models/form-item.types';
+import { InputType } from '../../../../models/input.types';
 
 @Component({
   selector: 'app-short-answer-edit',
@@ -10,7 +11,7 @@ import { Field } from '../../../../models/config.types';
 })
 export class ShortAnswerEditComponent implements OnInit {
   selectedInputType;
-  availableInputTypes = inputTypes;
+  availableInputTypes: InputType[] = inputTypes;
   @Input() field: Field;
   @Input() formGroup: FormGroup;
   availableValidationControl;

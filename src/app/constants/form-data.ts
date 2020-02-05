@@ -1,27 +1,4 @@
-import { Validators } from '@angular/forms';
-
-import { Field, FormItem } from '../models/config.types';
-
-export const inputTypes = [
-  {
-    title: 'Number',
-    value: 'number',
-    options: [
-      {title: 'Greater then', validator: 'min'},
-      {title: 'Less than', validator: 'max'},
-    ]
-  },
-  {
-    title: 'Text',
-    value: 'text',
-    options: [
-      {title: 'Email address', validator: 'email'},
-      {title: 'Maximum character count', validator: 'maxLength'},
-      {title: 'Minimum character count', validator: 'minLength'},
-      {title: 'Regular expression', validator: 'regexp'},
-    ]
-  },
-];
+import { Field, FormItem } from '../models/form-item.types';
 
 const form1Fields: Field[] = [
   {
@@ -151,13 +128,3 @@ export const forms: FormItem[] = [
   {id: 1, title: 'Form1 title', description: 'Form1 description', fields: form1Fields},
   {id: 2, title: 'Form2 title', description: 'Form2 description', fields: form2Fields},
 ];
-
-export const validators = {
-  min: Validators.min,
-  max: Validators.max,
-  required: Validators.required,
-  email: Validators.email,
-  maxLength: Validators.maxLength,
-  minLength: Validators.minLength,
-  regexp: Validators.pattern,
-};

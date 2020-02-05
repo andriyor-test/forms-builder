@@ -1,4 +1,4 @@
-import { ComponentType } from '../models/answer-types.types';
+import { ComponentType } from '../models/component.types';
 
 import { ShortAnswerViewComponent } from '../components/fields/short-answer/short-answer-view/short-answer-view.component';
 import { ShortAnswerEditComponent } from '../components/fields/short-answer/short-answer-edit/short-answer-edit.component';
@@ -24,7 +24,7 @@ import { MultipleChoicesEditComponent } from '../components/fields/multiple-choi
 import { DropDownViewComponent } from '../components/fields/drop-down/drop-down-view/drop-down-view.component';
 import { DropdownEditComponent } from '../components/fields/drop-down/dropdown-edit/dropdown-edit.component';
 
-export const components: ComponentType[] = [
+export const componentsTypes: ComponentType[] = [
   {
     title: 'Short answer',
     viewComponent: ShortAnswerViewComponent,

@@ -1,10 +1,10 @@
 import { Component, ComponentFactoryResolver, Input, OnInit, ViewChild } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
-import { components } from '../../constants/components';
-import { ComponentType } from '../../models/answer-types.types';
+import { componentsTypes } from '../../constants/components-types';
+import { ComponentType } from '../../models/component.types';
 import { AnswerDirective } from '../../answer.directive';
-import { Field } from '../../models/config.types';
+import { Field } from '../../models/form-item.types';
 
 @Component({
   selector: 'app-form-item',
@@ -12,7 +12,7 @@ import { Field } from '../../models/config.types';
   styleUrls: ['./form-item.component.css']
 })
 export class FormItemComponent implements OnInit {
-  types: ComponentType[] = components;
+  types: ComponentType[] = componentsTypes;
   @Input() field: Field;
   @Input() formGroup: FormGroup;
   @ViewChild(AnswerDirective, {static: true}) adHost: AnswerDirective;

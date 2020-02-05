@@ -3,8 +3,8 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
 import cloneDeep from 'lodash/cloneDeep';
-import { validators } from '../../constants/constants';
-import { FormItem } from '../../models/config.types';
+import { validatorsTypes } from '../../constants/validators-types';
+import { FormItem } from '../../models/form-item.types';
 
 @Component({
   selector: 'app-dynamic-form',
@@ -16,7 +16,7 @@ export class DynamicFormComponent implements OnInit {
   @Input() formItem: FormItem;
   @Output() updateForm = new EventEmitter();
   formConfig;
-  validators = validators;
+  validators = validatorsTypes;
 
   constructor(private fb: FormBuilder, public dialog: MatDialog) {
   }

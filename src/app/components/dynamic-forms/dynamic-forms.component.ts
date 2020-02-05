@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormService } from '../../services/form.service';
-import { FormItem } from '../../models/config.types';
+import { FormItem } from '../../models/form-item.types';
 import cloneDeep from 'lodash/cloneDeep';
 
 @Component({
