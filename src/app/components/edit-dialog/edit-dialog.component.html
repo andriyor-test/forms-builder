@@ -16,11 +16,12 @@
     </ng-container>
   </form>
 
-  <app-form-item
+  <app-dynamic-control
     [field]="data"
     [formGroup]="editForm"
+    [componentType]="'editComponent'"
   >
-  </app-form-item>
+  </app-dynamic-control>
 </div>
 
 <div mat-dialog-actions>

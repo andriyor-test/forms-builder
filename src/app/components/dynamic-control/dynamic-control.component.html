@@ -1,2 +1,17 @@
-<ng-template appAnswerHost>
-</ng-template>
+<mat-card class="card">
+  <ng-container *ngIf="componentType === 'editComponent'">
+    <form class="example-form">
+      <mat-form-field class="types">
+        <mat-label>Field type</mat-label>
+        <mat-select [(value)]="field.type" (valueChange)="onValueChange()">
+          <mat-option *ngFor="let type of types" [value]="type.value" >
+            {{type.title}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+  </ng-container>
+
+  <ng-template appAnswerHost>
+  </ng-template>
+</mat-card>

@@ -28,7 +28,6 @@ import { FileUploadViewComponent } from './components/fields/file-upload/file-up
 import { CheckboxesViewComponent } from './components/fields/checkboxes/checkboxes-view/checkboxes-view.component';
 import { MultipleChoicesViewComponent } from './components/fields/multiple-choices/multiple-choices-view/multiple-choices-view.component';
 import { DropDownViewComponent } from './components/fields/drop-down/drop-down-view/drop-down-view.component';
-import { FormItemComponent } from './components/form-item/form-item.component';
 import { EditDialogComponent } from './components/edit-dialog/edit-dialog.component';
 import { DynamicControlComponent } from './components/dynamic-control/dynamic-control.component';
 import { ShortAnswerEditComponent } from './components/fields/short-answer/short-answer-edit/short-answer-edit.component';
@@ -58,7 +57,6 @@ import { AnswerDirective } from './answer.directive';
     MultipleChoicesViewComponent,
     AnswerDirective,
     DropDownViewComponent,
-    FormItemComponent,
     EditDialogComponent,
     DynamicControlComponent,
     ShortAnswerEditComponent,
