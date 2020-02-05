@@ -3,6 +3,7 @@
   "rules": {
     "typedef": [true, "call-signature"],
     "id-length": true,
+    "no-complex-conditionals": true,
     "import-group-ordering": {
       "severity": "warning",
       "options": {

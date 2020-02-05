@@ -65,7 +65,7 @@ const form1Fields: Field[] = [
     }
   },
   {
-    id: 5,
+    id: 6,
     control: 'time',
     title: 'Time',
     type: 'time',
@@ -77,7 +77,7 @@ const form1Fields: Field[] = [
 
 const form2Fields: Field[] = [
   {
-    id: 6,
+    id: 7,
     control: 'dropdown',
     title: 'Dropdown',
     type: 'dropdown',
@@ -93,7 +93,7 @@ const form2Fields: Field[] = [
     ],
   },
   {
-    id: 7,
+    id: 8,
     control: 'multiple-choices',
     title: 'Multiple choices',
     type: 'multiple-choices',
@@ -108,7 +108,7 @@ const form2Fields: Field[] = [
     ],
   },
   {
-    id: 8,
+    id: 9,
     control: 'checkboxes',
     title: 'Checkboxes',
     type: 'checkboxes',
