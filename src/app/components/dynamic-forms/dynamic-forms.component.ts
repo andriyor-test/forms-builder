@@ -8,7 +8,7 @@ import { FormItem } from '../../models/form-item.types';
 @Component({
   selector: 'app-dynamic-forms',
   templateUrl: './dynamic-forms.component.html',
-  styleUrls: ['./dynamic-forms.component.css']
+  styleUrls: ['./dynamic-forms.component.scss']
 })
 export class DynamicFormsComponent implements OnInit {
   forms: FormItem[];

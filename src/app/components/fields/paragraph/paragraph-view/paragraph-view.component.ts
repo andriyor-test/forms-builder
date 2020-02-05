@@ -6,7 +6,7 @@ import { Field } from '../../../../models/form-item.types';
 @Component({
   selector: 'app-paragraph',
   templateUrl: './paragraph-view.component.html',
-  styleUrls: ['./paragraph-view.component.css']
+  styleUrls: ['./paragraph-view.component.scss']
 })
 export class ParagraphViewComponent {
   @Input() field: Field;

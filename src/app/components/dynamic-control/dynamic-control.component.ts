@@ -11,7 +11,7 @@ import { componentsTypes } from '../../constants/components-types';
 @Component({
   selector: 'app-dynamic-control',
   templateUrl: './dynamic-control.component.html',
-  styleUrls: ['./dynamic-control.component.css']
+  styleUrls: ['./dynamic-control.component.scss']
 })
 export class DynamicControlComponent implements OnInit {
   types: ComponentType[] = componentsTypes;

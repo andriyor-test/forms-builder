@@ -124,5 +124,10 @@
       }
     }
   },
-  "defaultProject": "form-survey"
+  "defaultProject": "form-survey",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }

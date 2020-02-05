@@ -9,7 +9,7 @@ import { Field } from '../../models/form-item.types';
 @Component({
   selector: 'app-form-item',
   templateUrl: './form-item.component.html',
-  styleUrls: ['./form-item.component.css']
+  styleUrls: ['./form-item.component.scss']
 })
 export class FormItemComponent implements OnInit {
   types: ComponentType[] = componentsTypes;

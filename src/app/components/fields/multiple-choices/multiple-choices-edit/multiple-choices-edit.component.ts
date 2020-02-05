@@ -6,7 +6,7 @@ import { Field } from '../../../../models/form-item.types';
 @Component({
   selector: 'app-multiple-choices-edit',
   templateUrl: './multiple-choices-edit.component.html',
-  styleUrls: ['./multiple-choices-edit.component.css']
+  styleUrls: ['./multiple-choices-edit.component.scss']
 })
 export class MultipleChoicesEditComponent {
   @Input() field: Field;

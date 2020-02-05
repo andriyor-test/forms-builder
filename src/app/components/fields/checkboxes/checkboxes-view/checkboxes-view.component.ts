@@ -6,7 +6,7 @@ import { Field } from '../../../../models/form-item.types';
 @Component({
   selector: 'app-checkboxes',
   templateUrl: './checkboxes-view.component.html',
-  styleUrls: ['./checkboxes-view.component.css']
+  styleUrls: ['./checkboxes-view.component.scss']
 })
 export class CheckboxesViewComponent {
   @Input() field: Field;

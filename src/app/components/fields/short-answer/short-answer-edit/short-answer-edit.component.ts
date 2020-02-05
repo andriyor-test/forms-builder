@@ -9,7 +9,7 @@ import { InputType } from '../../../../models/input.types';
 @Component({
   selector: 'app-short-answer-edit',
   templateUrl: './short-answer-edit.component.html',
-  styleUrls: ['./short-answer-edit.component.css']
+  styleUrls: ['./short-answer-edit.component.scss']
 })
 export class ShortAnswerEditComponent implements OnInit {
   selectedInputType;

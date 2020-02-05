@@ -11,7 +11,7 @@ import { FormItem } from '../../models/form-item.types';
 @Component({
   selector: 'app-dynamic-form',
   templateUrl: './dynamic-form.component.html',
-  styleUrls: ['./dynamic-form.component.css']
+  styleUrls: ['./dynamic-form.component.scss']
 })
 export class DynamicFormComponent implements OnInit {
   form: FormGroup;
@@ -20,8 +20,10 @@ export class DynamicFormComponent implements OnInit {
   formConfig;
   validators = validatorsTypes;
 
-  constructor(private fb: FormBuilder, public dialog: MatDialog) {
-  }
+  constructor(
+    private fb: FormBuilder,
+    public dialog: MatDialog
+  ) {}
 
   openDialog(configItem): void {
     const dialogRef = this.dialog.open(EditDialogComponent, {

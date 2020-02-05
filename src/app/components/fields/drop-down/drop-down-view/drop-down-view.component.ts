@@ -6,7 +6,7 @@ import { Field } from '../../../../models/form-item.types';
 @Component({
   selector: 'app-drop-down',
   templateUrl: './drop-down-view.component.html',
-  styleUrls: ['./drop-down-view.component.css']
+  styleUrls: ['./drop-down-view.component.scss']
 })
 export class DropDownViewComponent {
   @Input() field: Field;

@@ -6,7 +6,7 @@ import { Field } from '../../../../models/form-item.types';
 @Component({
   selector: 'app-time',
   templateUrl: './time-view.component.html',
-  styleUrls: ['./time-view.component.css']
+  styleUrls: ['./time-view.component.scss']
 })
 export class TimeViewComponent {
   @Input() field: Field;
