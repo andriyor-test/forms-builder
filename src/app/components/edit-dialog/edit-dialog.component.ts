@@ -24,9 +24,9 @@ export class EditDialogComponent {
       inputType: [data.inputType],
       validation:   this.fb.group({}),
     });
-    for (const j in data.validation) {
-      if (data.validation.hasOwnProperty(j)) {
-        this.validation.addControl(j,  new FormControl(data.validation[j]));
+    for (const validationKey in data.validation) {
+      if (data.validation.hasOwnProperty(validationKey)) {
+        this.validation.addControl(validationKey,  new FormControl(data.validation[validationKey]));
       }
     }
     if (data.options) {

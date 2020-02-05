@@ -1,6 +1,7 @@
 {
-  "extends": ["tslint:recommended", "tslint-import-group-ordering"],
+  "extends": ["tslint:recommended", "tslint-import-group-ordering", "tslint-clean-code"],
   "rules": {
+    "id-length": true,
     "import-group-ordering": {
       "severity": "warning",
       "options": {
@@ -64,6 +65,14 @@
       }
     },
     "whitespace": [true, "check-module"],
+    "variable-name": {
+      "options": [
+        "ban-keywords",
+        "check-format",
+        "allow-leading-underscore",
+        "allow-pascal-case"
+      ]
+    },
     "array-type": false,
     "arrow-parens": false,
     "deprecation": {

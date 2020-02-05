@@ -31,7 +31,7 @@ export class DynamicFormComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        const index = this.formItem.fields.findIndex(i => i.id === result.id);
+        const index = this.formItem.fields.findIndex(field => field.id === result.id);
         this.formItem.fields[index] = result;
         this.updateForm.emit(this.formItem);
       }
@@ -56,20 +56,20 @@ export class DynamicFormComponent implements OnInit {
     form['title'] = formConfig.title;
     form['description'] = formConfig.description;
 
-    for (const i of formConfig.fields) {
+    for (const field of formConfig.fields) {
       const fieldValidators = [];
-      for (const j in i.validation) {
-        if (i.validation.hasOwnProperty(j)) {
-          if (i.validation[j] === true) {
-            fieldValidators.push(this.validators[j]);
-          } else if (i.validation[j] === false) {
+      for (const validationKey in field.validation) {
+        if (field.validation.hasOwnProperty(validationKey)) {
+          if (field.validation[validationKey] === true) {
+            fieldValidators.push(this.validators[validationKey]);
+          } else if (field.validation[validationKey] === false) {
           } else {
-            fieldValidators.push(this.validators[j](i.validation[j]));
+            fieldValidators.push(this.validators[validationKey](field.validation[validationKey]));
           }
         }
       }
-      if (i.type === 'checkboxes') {
-        form[i.control] = this.fb.array(i.options.map((option) => {
+      if (field.type === 'checkboxes') {
+        form[field.control] = this.fb.array(field.options.map((option) => {
             return this.fb.group({
               value: option.value,
               label: option.label,
@@ -77,7 +77,7 @@ export class DynamicFormComponent implements OnInit {
           })
         );
       } else {
-        form[i.control] = new FormControl(i.value || '', fieldValidators);
+        form[field.control] = new FormControl(field.value || '', fieldValidators);
       }
     }
     return form;

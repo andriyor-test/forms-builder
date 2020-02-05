@@ -26,7 +26,7 @@ export class DynamicControlComponent implements OnInit {
   }
 
   onValueChange() {
-    const selectedAnswerTypeIndex = this.types.findIndex(t => t.value === this.field.type );
+    const selectedAnswerTypeIndex = this.types.findIndex(type => type.value === this.field.type );
     const answerItem = this.types[selectedAnswerTypeIndex];
 
     const componentFactory = this.componentFactoryResolver.resolveComponentFactory(answerItem.viewComponent);
