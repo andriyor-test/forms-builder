@@ -42,7 +42,7 @@ export class EditDialogComponent {
     }
   }
 
-  get validation() {
+  get validation(): FormGroup {
     return this.editForm.get('validation') as FormGroup;
   }
 
@@ -50,7 +50,7 @@ export class EditDialogComponent {
     this.dialogRef.close();
   }
 
-  onApply() {
+  onApply(): void {
     this.editForm.controls.type.setValue(this.data.type);
     this.dialogRef.close(this.editForm.value);
   }

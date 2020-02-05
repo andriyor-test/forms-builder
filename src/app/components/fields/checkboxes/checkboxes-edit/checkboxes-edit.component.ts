@@ -14,19 +14,19 @@ export class CheckboxesEditComponent {
 
   constructor(private fb: FormBuilder) {}
 
-  get options() {
+  get options(): FormArray {
     return this.formGroup.get('options') as FormArray;
   }
 
-  onAddCheckbox() {
+  onAddCheckbox(): void {
     this.options.push(this.fb.group({
       value: false,
       label: '',
     }));
   }
 
-  onRemoveCheckbox(i) {
-    this.options.removeAt(i);
+  onRemoveCheckbox(index): void {
+    this.options.removeAt(index);
   }
 
 }

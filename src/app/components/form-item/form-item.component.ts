@@ -19,11 +19,11 @@ export class FormItemComponent implements OnInit {
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.onValueChange();
   }
 
-  onValueChange() {
+  onValueChange(): void {
     const selectedAnswerTypeIndex = this.types.findIndex(type => type.value === this.field.type );
     const answerItem = this.types[selectedAnswerTypeIndex];
 

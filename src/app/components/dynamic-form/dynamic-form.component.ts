@@ -38,20 +38,20 @@ export class DynamicFormComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.formConfig = this.formItem.fields;
     this.form = this.fb.group(this.getControl(this.formItem));
   }
 
-  get title() {
+  get title(): FormControl {
     return this.form.get('title') as FormControl;
   }
 
-  get description() {
+  get description(): FormControl {
     return this.form.get('description') as FormControl;
   }
 
-  getControl(formConfig) {
+  getControl(formConfig): any {
     const form = {};
     form['title'] = formConfig.title;
     form['description'] = formConfig.description;
@@ -83,10 +83,7 @@ export class DynamicFormComponent implements OnInit {
     return form;
   }
 
-  callingFunction() {
-  }
-
-  addFormFieldBuilder() {
+  addFormFieldBuilder(): void {
     this.formItem.fields = [
       ...this.formItem.fields,
       {
@@ -104,8 +101,7 @@ export class DynamicFormComponent implements OnInit {
     this.form.updateValueAndValidity();
   }
 
-
-  onDeleteItem(index) {
+  onDeleteItem(index): void {
     this.formItem.fields.splice(index, 1);
     this.formItem = cloneDeep(this.formItem);
     this.form = this.fb.group(this.getControl(this.formItem));

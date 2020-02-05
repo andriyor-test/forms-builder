@@ -14,19 +14,19 @@ export class MultipleChoicesEditComponent {
 
   constructor(private fb: FormBuilder) {}
 
-  get options() {
+  get options(): FormArray {
     return this.formGroup.get('options') as FormArray;
   }
 
-  onAddRadio() {
+  onAddRadio(): void {
     this.options.push(this.fb.group({
       value: '',
       label: '',
     }));
   }
 
-  onRemoveOption(i) {
-    this.options.removeAt(i);
+  onRemoveOption(index): void {
+    this.options.removeAt(index);
   }
 
 }

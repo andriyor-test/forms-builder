@@ -14,19 +14,19 @@ export class DropdownEditComponent {
 
   constructor(private fb: FormBuilder) {}
 
-  get options() {
+  get options(): FormArray {
     return this.formGroup.get('options') as FormArray;
   }
 
-  onAddOption() {
+  onAddOption(): void {
     this.options.push(this.fb.group({
       value: '',
       label: '',
     }));
   }
 
-  onRemoveItem(i) {
-    this.options.removeAt(i);
+  onRemoveItem(index): void {
+    this.options.removeAt(index);
   }
 
 }

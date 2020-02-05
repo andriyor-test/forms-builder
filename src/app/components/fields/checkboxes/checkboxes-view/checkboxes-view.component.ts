@@ -12,7 +12,7 @@ export class CheckboxesViewComponent {
   @Input() field: Field;
   @Input() formGroup: FormGroup;
 
-  get options() {
+  get options(): FormArray {
     return this.formGroup.get('options') as FormArray;
   }
 

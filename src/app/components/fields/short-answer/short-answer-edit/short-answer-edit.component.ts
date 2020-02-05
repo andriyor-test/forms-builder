@@ -18,7 +18,7 @@ export class ShortAnswerEditComponent implements OnInit {
   @Input() formGroup: FormGroup;
   availableValidationControl;
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.availableValidationControl = Object.keys(this.validation.controls);
     this.selectedInputType = this.availableInputTypes.find(type => type.value === this.field.inputType);
     if (this.field.inputType === 'email') {
@@ -27,31 +27,31 @@ export class ShortAnswerEditComponent implements OnInit {
     }
   }
 
-  get inputType() {
+  get inputType(): FormControl {
     return this.formGroup.get('inputType') as FormControl;
   }
 
-  get validation() {
+  get validation(): FormGroup {
     return this.formGroup.get('validation') as FormGroup;
   }
 
-  onValueChange() {
+  onValueChange(): void {
     this.selectedInputType = this.availableInputTypes.find(type => type.value === this.inputType.value);
     if (this.field.inputType === 'email') {
       this.selectedInputType = this.availableInputTypes[1];
     }
-    for (const c of this.availableValidationControl) {
-      this.validation.removeControl(c);
+    for (const control of this.availableValidationControl) {
+      this.validation.removeControl(control);
     }
     this.availableValidationControl = [];
   }
 
-  onRemoveValidator(validator) {
+  onRemoveValidator(validator): void {
     this.validation.removeControl(validator);
-    this.availableValidationControl = this.availableValidationControl.filter(c => c !== validator);
+    this.availableValidationControl = this.availableValidationControl.filter(control => control !== validator);
   }
 
-  onAddValidator() {
+  onAddValidator(): void {
     if (this.inputType.value === 'text') {
       const textDefault = 'maxLength';
       this.availableValidationControl.push(textDefault);
@@ -63,9 +63,9 @@ export class ShortAnswerEditComponent implements OnInit {
     }
   }
 
-  onValidatorTypeChange(value, i) {
-    this.validation.removeControl(this.availableValidationControl[i]);
-    this.availableValidationControl.splice(i, 1);
+  onValidatorTypeChange(value, index): void {
+    this.validation.removeControl(this.availableValidationControl[index]);
+    this.availableValidationControl.splice(index, 1);
     if (value === 'email') {
       this.validation.addControl(value,  new FormControl(true));
     } else {

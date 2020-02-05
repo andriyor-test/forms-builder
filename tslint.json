@@ -1,6 +1,7 @@
 {
   "extends": ["tslint:recommended", "tslint-import-group-ordering", "tslint-clean-code"],
   "rules": {
+    "typedef": [true, "call-signature"],
     "id-length": true,
     "import-group-ordering": {
       "severity": "warning",

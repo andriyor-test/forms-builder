@@ -22,11 +22,11 @@ export class DynamicFormsComponent implements OnInit {
     });
   }
 
-  onAddForm() {
+  onAddForm(): void {
     this.forms.push({id: 33, title: 'Form3 title', description: 'Form3 description', fields: []});
   }
 
-  onFormUpdate(item, index) {
+  onFormUpdate(item, index): void {
     this.forms[index] = item;
     this.forms = cloneDeep(this.forms);
   }
