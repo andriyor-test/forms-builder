@@ -1,4 +1,11 @@
 <form [formGroup]="formGroup">
+  <div formGroupName="validation">
+    <mat-checkbox formControlName="required" [value]="field.validation.required">
+      Required
+    </mat-checkbox>
+  </div>
+
+  <ng-container *ngIf="field.type === 'short'">
   <mat-form-field class="types">
     <mat-label>Input field type</mat-label>
     <mat-select formControlName="inputType" (ngModelChange)="onValueChange()">
@@ -11,14 +18,14 @@
   <div [formGroup]="validation" *ngFor="let control of availableValidationControl; let i = index">
 
     <ng-container *ngIf="control !== 'required'">
-    <mat-form-field class="types" >
-      <mat-label>Validator type</mat-label>
-      <mat-select [(value)]="control" (valueChange)="onValidatorTypeChange(control, i)">
-        <mat-option *ngFor="let option of selectedInputType?.options" [value]="option.validator" >
-          {{option.title}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+      <mat-form-field class="types" >
+        <mat-label>Validator type</mat-label>
+        <mat-select [(value)]="control" (valueChange)="onValidatorTypeChange(control, i)">
+          <mat-option *ngFor="let option of selectedInputType?.options" [value]="option.validator" >
+            {{option.title}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
       <ng-container *ngIf="control !== 'email'">
         <mat-form-field>
@@ -28,9 +35,9 @@
         </mat-form-field>
       </ng-container>
 
-    <button mat-button (click)="onRemoveValidator(control)">
-      Remove Validator
-    </button>
+      <button mat-button (click)="onRemoveValidator(control)">
+        Remove Validator
+      </button>
     </ng-container>
   </div>
 
@@ -39,5 +46,6 @@
       Add Validator
     </button>
   </div>
+  </ng-container>
 
 </form>

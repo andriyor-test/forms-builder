@@ -29,13 +29,13 @@ import { MultipleChoicesViewComponent } from './components/fields/views/multiple
 import { DropDownViewComponent } from './components/fields/views/drop-down-view/drop-down-view.component';
 import { EditDialogComponent } from './components/edit-dialog/edit-dialog.component';
 import { DynamicControlComponent } from './components/dynamic-control/dynamic-control.component';
-import { ShortAnswerEditComponent } from './components/fields/editors/short-answer-edit/short-answer-edit.component';
 import { DropdownEditComponent } from './components/fields/editors/dropdown-edit/dropdown-edit.component';
 import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
 import { DynamicFormsComponent } from './components/dynamic-forms/dynamic-forms.component';
 
 import { AppComponent } from './app.component';
 import { AnswerDirective } from './answer.directive';
+import { FieldValidatorComponent } from './components/fields/field-validator/field-validator.component';
 
 
 @NgModule({
@@ -51,10 +51,10 @@ import { AnswerDirective } from './answer.directive';
     DropDownViewComponent,
     EditDialogComponent,
     DynamicControlComponent,
-    ShortAnswerEditComponent,
     DropdownEditComponent,
     DynamicFormComponent,
     DynamicFormsComponent,
+    FieldValidatorComponent,
   ],
   entryComponents: [
     ShortAnswerViewComponent,
@@ -65,7 +65,6 @@ import { AnswerDirective } from './answer.directive';
     MultipleChoicesViewComponent,
     DropDownViewComponent,
     EditDialogComponent,
-    ShortAnswerEditComponent,
     DropdownEditComponent,
   ],
   imports: [

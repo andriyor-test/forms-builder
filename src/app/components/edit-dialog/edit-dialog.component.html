@@ -8,22 +8,9 @@
     <mat-form-field class="example-full-width">
       <input matInput placeholder="Title" [value]="data.title" formControlName="title">
     </mat-form-field>
-
-    <ng-container formGroupName="validation">
-      <mat-checkbox formControlName="required" [value]="data.validation.required">
-        Required
-      </mat-checkbox>
-    </ng-container>
   </form>
 
   <ng-container [ngSwitch]="data.type">
-    <ng-container *ngSwitchCase="'short'">
-      <app-short-answer-edit
-        [field]="data"
-        [formGroup]="editForm">
-      </app-short-answer-edit>
-    </ng-container>
-
     <ng-container *ngSwitchCase="'dropdown'">
       <app-dropdown-edit
         [field]="data"
@@ -44,6 +31,10 @@
     </ng-container>
   </ng-container>
 
+  <app-field-validator
+    [field]="data"
+    [formGroup]="editForm">
+  </app-field-validator>
 
   </div>
 

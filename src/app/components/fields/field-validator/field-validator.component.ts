@@ -1,17 +1,18 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
-import { inputTypes } from '../../../../constants/input-types';
+import { inputTypes } from '../../../constants/input-types';
 
-import { Field } from '../../../../models/form-item.types';
-import { InputType } from '../../../../models/input.types';
+import { Field } from '../../../models/form-item.types';
+import { InputType } from '../../../models/input.types';
+
 
 @Component({
-  selector: 'app-short-answer-edit',
-  templateUrl: './short-answer-edit.component.html',
-  styleUrls: ['./short-answer-edit.component.scss']
+  selector: 'app-field-validator',
+  templateUrl: './field-validator.component.html',
+  styleUrls: ['./field-validator.component.scss']
 })
-export class ShortAnswerEditComponent implements OnInit {
+export class FieldValidatorComponent implements OnInit {
   selectedInputType;
   availableInputTypes: InputType[] = inputTypes;
   @Input() field: Field;

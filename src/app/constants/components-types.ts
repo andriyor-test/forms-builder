@@ -1,5 +1,4 @@
 import { ShortAnswerViewComponent } from '../components/fields/views/short-answer-view/short-answer-view.component';
-import { ShortAnswerEditComponent } from '../components/fields/editors/short-answer-edit/short-answer-edit.component';
 
 import { ParagraphViewComponent } from '../components/fields/views/paragraph-view/paragraph-view.component';
 import { DateViewComponent } from '../components/fields/views/date-view/date-view.component';
@@ -16,7 +15,6 @@ export const componentsTypes: ComponentType[] = [
   {
     title: 'Short answer',
     viewComponent: ShortAnswerViewComponent,
-    editComponent: ShortAnswerEditComponent,
     value: 'short',
   },
   {

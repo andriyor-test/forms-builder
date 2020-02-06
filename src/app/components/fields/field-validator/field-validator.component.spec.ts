@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShortAnswerEditComponent } from './short-answer-edit.component';
+import { FieldValidatorComponent } from './field-validator.component';
 
-describe('ShortAnswerEditComponent', () => {
-  let component: ShortAnswerEditComponent;
-  let fixture: ComponentFixture<ShortAnswerEditComponent>;
+describe('FieldValidatorComponent', () => {
+  let component: FieldValidatorComponent;
+  let fixture: ComponentFixture<FieldValidatorComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShortAnswerEditComponent ]
+      declarations: [ FieldValidatorComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ShortAnswerEditComponent);
+    fixture = TestBed.createComponent(FieldValidatorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
