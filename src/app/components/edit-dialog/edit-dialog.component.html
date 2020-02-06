@@ -10,19 +10,42 @@
     </mat-form-field>
 
     <ng-container formGroupName="validation">
-      <mat-checkbox formControlName="required" [value]="data.validation?.required ? true : false">
+      <mat-checkbox formControlName="required" [value]="data.validation.required">
         Required
       </mat-checkbox>
     </ng-container>
   </form>
 
-  <app-dynamic-control
-    [field]="data"
-    [formGroup]="editForm"
-    [componentType]="'editComponent'"
-  >
-  </app-dynamic-control>
-</div>
+  <ng-container [ngSwitch]="data.type">
+    <ng-container *ngSwitchCase="'short'">
+      <app-short-answer-edit
+        [field]="data"
+        [formGroup]="editForm">
+      </app-short-answer-edit>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'dropdown'">
+      <app-dropdown-edit
+        [field]="data"
+        [formGroup]="editForm">
+      </app-dropdown-edit>
+    </ng-container>
+    <ng-container *ngSwitchCase="'multiple-choices'">
+      <app-dropdown-edit
+        [field]="data"
+        [formGroup]="editForm">
+      </app-dropdown-edit>
+    </ng-container>
+    <ng-container *ngSwitchCase="'checkboxes'">
+      <app-dropdown-edit
+        [field]="data"
+        [formGroup]="editForm">
+      </app-dropdown-edit>
+    </ng-container>
+  </ng-container>
+
+
+  </div>
 
 <div mat-dialog-actions>
   <button mat-button (click)="cancel()">

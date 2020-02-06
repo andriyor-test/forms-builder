@@ -14,7 +14,6 @@ import { Field } from '../../models/form-item.types';
 export class DynamicControlComponent implements OnInit {
   types: ComponentType[] = componentsTypes;
   @Input() field: Field;
-  @Input() componentType: string;
   @Input() formGroup: FormGroup;
   @ViewChild(AnswerDirective, {static: true}) adHost: AnswerDirective;
 
@@ -28,11 +27,11 @@ export class DynamicControlComponent implements OnInit {
     const selectedAnswerTypeIndex = this.types.findIndex(type => type.value === this.field.type );
     const answerItem = this.types[selectedAnswerTypeIndex];
 
-    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(answerItem[this.componentType]);
+    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(answerItem.viewComponent);
     const viewContainerRef = this.adHost.viewContainerRef;
     viewContainerRef.clear();
     const componentRef = viewContainerRef.createComponent(componentFactory);
-    componentRef.instance['field'] = this.field;
-    componentRef.instance['formGroup'] = this.formGroup;
+    componentRef.instance.field = this.field;
+    componentRef.instance.formGroup = this.formGroup;
   }
 }

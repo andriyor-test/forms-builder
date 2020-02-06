@@ -23,9 +23,7 @@
       <mat-card *ngFor="let configItem of formConfig; let i = index" class="form-field">
         <app-dynamic-control
           [field]="configItem"
-          [formGroup]="form"
-          [componentType]="'viewComponent'"
-          >
+          [formGroup]="form">
         </app-dynamic-control>
 
         <button mat-button (click)="openDialog(configItem)">

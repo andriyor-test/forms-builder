@@ -1,4 +1,4 @@
-interface Validation {
+export interface Validation {
   required?: boolean;
   email?: boolean;
   minLength?: number;

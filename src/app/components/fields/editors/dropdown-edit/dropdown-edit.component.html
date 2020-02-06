@@ -2,12 +2,19 @@
   <ng-container formArrayName="options">
     <ng-container *ngFor="let _ of options.controls; let i = index">
       <div [formArrayName]="i">
+
+        <ng-container *ngIf="field.type === 'checkboxes'; else newDeb">
+          <mat-checkbox class="checkbox" formControlName="value"></mat-checkbox>
+        </ng-container>
+
+        <ng-template #newDeb>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Value" formControlName="value" >
+          </mat-form-field>
+        </ng-template>
+
         <mat-form-field class="form-field">
           <input matInput placeholder="Label" formControlName="label">
-        </mat-form-field>
-
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Value" formControlName="value" >
         </mat-form-field>
 
         <button mat-button (click)="onRemoveItem(i)">

@@ -54,5 +54,4 @@ export class EditDialogComponent {
     this.editForm.controls.type.setValue(this.data.type);
     this.dialogRef.close(this.editForm.value);
   }
-
 }
