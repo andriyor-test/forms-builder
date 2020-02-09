@@ -3,6 +3,8 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 import { MatDialogRef } from '@angular/material';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ComponentType } from '../../models/component.types';
+import { componentsTypes } from '../../constants/components-types';
 
 @Component({
   selector: 'app-edit-dialog',
@@ -11,6 +13,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class EditDialogComponent {
   editForm: FormGroup;
+  types: ComponentType[] = componentsTypes;
 
   constructor(
     public dialogRef: MatDialogRef<EditDialogComponent>,

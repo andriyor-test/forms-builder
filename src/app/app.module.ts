@@ -29,7 +29,7 @@ import { MultipleChoicesViewComponent } from './components/fields/views/multiple
 import { DropDownViewComponent } from './components/fields/views/drop-down-view/drop-down-view.component';
 import { EditDialogComponent } from './components/edit-dialog/edit-dialog.component';
 import { DynamicControlComponent } from './components/dynamic-control/dynamic-control.component';
-import { DropdownEditComponent } from './components/fields/editors/dropdown-edit/dropdown-edit.component';
+import { DropdownEditComponent } from './components/fields/dropdown-edit/dropdown-edit.component';
 import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
 import { DynamicFormsComponent } from './components/dynamic-forms/dynamic-forms.component';
 

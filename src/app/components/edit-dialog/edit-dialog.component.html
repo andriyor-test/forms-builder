@@ -1,5 +1,6 @@
 <h1 mat-dialog-title>Edit {{data.title}} field</h1>
 <div mat-dialog-content>
+
   <form [formGroup]="editForm">
     <mat-form-field class="example-full-width">
       <input matInput placeholder="Control Name" [value]="data.control" formControlName="control">
@@ -7,6 +8,17 @@
 
     <mat-form-field class="example-full-width">
       <input matInput placeholder="Title" [value]="data.title" formControlName="title">
+    </mat-form-field>
+  </form>
+
+  <form class="example-form">
+    <mat-form-field class="types">
+      <mat-label>Field type</mat-label>
+      <mat-select [(value)]="data.type">
+        <mat-option *ngFor="let type of types" [value]="type.value" >
+          {{type.title}}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
   </form>
 

@@ -7,7 +7,7 @@ import { CheckboxesViewComponent } from '../components/fields/views/checkboxes-v
 import { MultipleChoicesViewComponent } from '../components/fields/views/multiple-choices-view/multiple-choices-view.component';
 
 import { DropDownViewComponent } from '../components/fields/views/drop-down-view/drop-down-view.component';
-import { DropdownEditComponent } from '../components/fields/editors/dropdown-edit/dropdown-edit.component';
+import { DropdownEditComponent } from '../components/fields/dropdown-edit/dropdown-edit.component';
 
 import { ComponentType } from '../models/component.types';
 
